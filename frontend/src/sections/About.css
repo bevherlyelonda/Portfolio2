@@ -1,0 +1,673 @@
+/* =================================
+   ABOUT
+================================= */
+
+.about {
+  position: relative;
+
+  width: 100%;
+
+  box-sizing: border-box;
+
+  padding: 110px 25px 100px;
+
+  background:
+    linear-gradient(
+      180deg,
+      var(--color-black),
+      var(--surface)
+    );
+
+  scroll-margin-top: 75px;
+}
+
+
+/* =================================
+   CONTAINER
+================================= */
+
+.about-container {
+  width: 100%;
+
+  max-width: 1150px;
+
+  margin: 0 auto;
+}
+
+
+/* =================================
+   SECTION HEADING
+================================= */
+
+.about-heading {
+  margin-bottom: 60px;
+}
+
+.section-heading {
+  text-align: center;
+}
+
+.section-label {
+  display: inline-block;
+
+  margin-bottom: 12px;
+
+  color: var(--color-blue);
+
+  font-size: 0.78rem;
+
+  font-weight: 700;
+
+  letter-spacing: 2px;
+}
+
+.section-heading h2 {
+  margin: 0;
+
+  color: var(--text-primary);
+
+  font-size: clamp(
+    2rem,
+    4vw,
+    3rem
+  );
+
+  line-height: 1.15;
+
+  letter-spacing: -0.5px;
+}
+
+.section-heading h2 span {
+  background: var(--gradient-primary);
+
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+
+  background-clip: text;
+}
+
+.section-line {
+  width: 65px;
+
+  height: 3px;
+
+  margin: 18px auto 0;
+
+  border-radius: 10px;
+
+  background: var(--gradient-primary);
+}
+
+
+/* =================================
+   INTRODUCTION
+================================= */
+
+.about-introduction {
+  width: 100%;
+
+  max-width: 950px;
+
+  box-sizing: border-box;
+
+  margin: 0 auto 55px;
+
+  padding: 38px 42px;
+
+  background:
+    linear-gradient(
+      135deg,
+      rgba(0, 123, 255, 0.06),
+      rgba(232, 62, 140, 0.04)
+    );
+
+  border: 1px solid var(--border);
+
+  border-radius: 16px;
+
+  transition:
+    transform 0.35s ease,
+    border-color 0.35s ease,
+    box-shadow 0.35s ease;
+}
+
+.about-introduction:hover {
+  transform: translateY(-3px);
+
+  border-color: var(--border-blue);
+
+  box-shadow:
+    var(--shadow-blue);
+}
+
+
+/* =================================
+   INTRODUCTION CONTENT
+================================= */
+
+.about-introduction-content {
+  width: 100%;
+}
+
+.about-introduction-content h3 {
+  margin: 0 0 18px;
+
+  color: var(--text-primary);
+
+  font-size: 1.5rem;
+
+  font-weight: 600;
+
+  line-height: 1.4;
+}
+
+.about-introduction-content h3 span {
+  color: var(--color-blue);
+}
+
+.about-introduction-content p {
+  margin: 0;
+
+  color: var(--text);
+
+  font-size: 1rem;
+
+  line-height: 1.85;
+}
+
+
+/* =================================
+   ABOUT GRID
+================================= */
+
+.about-grid {
+  width: 100%;
+
+  max-width: 950px;
+
+  margin: 0 auto;
+
+  display: grid;
+
+  grid-template-columns:
+    repeat(2, minmax(0, 1fr));
+
+  gap: 20px;
+}
+
+
+/* =================================
+   ABOUT CARD
+================================= */
+
+.about-card {
+  position: relative;
+
+  min-width: 0;
+
+  min-height: 190px;
+
+  box-sizing: border-box;
+
+  padding: 30px;
+
+  overflow: hidden;
+
+  background: var(--surface);
+
+  border: 1px solid var(--border);
+
+  border-radius: 14px;
+
+  transition:
+    transform 0.35s ease,
+    border-color 0.35s ease,
+    box-shadow 0.35s ease,
+    background 0.35s ease;
+}
+
+
+/* =================================
+   CARD ACCENT
+================================= */
+
+.about-card::before {
+  content: "";
+
+  position: absolute;
+
+  top: 0;
+  left: 0;
+
+  width: 3px;
+
+  height: 0;
+
+  background: var(--gradient-primary);
+
+  border-radius: 0 0 3px 0;
+
+  transition:
+    height 0.35s ease;
+}
+
+.about-card:hover::before {
+  height: 100%;
+}
+
+
+/* =================================
+   CARD HOVER
+================================= */
+
+.about-card:hover {
+  transform: translateY(-5px);
+
+  border-color: var(--border-blue);
+
+  box-shadow:
+    var(--shadow-blue);
+
+  background:
+    linear-gradient(
+      135deg,
+      var(--surface),
+      rgba(0, 123, 255, 0.025)
+    );
+}
+
+
+/* =================================
+   CARD CONTENT
+================================= */
+
+.about-card-content {
+  width: 100%;
+}
+
+.about-card-content h3 {
+  margin: 0 0 12px;
+
+  color: var(--text-primary);
+
+  font-size: 1.15rem;
+
+  font-weight: 600;
+
+  line-height: 1.4;
+}
+
+.about-card-content p {
+  margin: 0;
+
+  color: var(--text-secondary);
+
+  font-size: 0.95rem;
+
+  line-height: 1.75;
+}
+
+
+/* =================================
+   CV
+================================= */
+
+.about-cv {
+  width: 100%;
+
+  max-width: 950px;
+
+  box-sizing: border-box;
+
+  margin: 50px auto 0;
+
+  padding: 30px 35px;
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: space-between;
+
+  gap: 30px;
+
+  background:
+    linear-gradient(
+      135deg,
+      rgba(0, 123, 255, 0.08),
+      rgba(232, 62, 140, 0.08)
+    );
+
+  border: 1px solid var(--border);
+
+  border-radius: 14px;
+
+  transition:
+    transform 0.35s ease,
+    border-color 0.35s ease,
+    box-shadow 0.35s ease;
+}
+
+.about-cv:hover {
+  transform: translateY(-3px);
+
+  border-color: var(--border-blue);
+
+  box-shadow:
+    var(--shadow-blue);
+}
+
+
+/* =================================
+   CV CONTENT
+================================= */
+
+.about-cv-content {
+  min-width: 0;
+}
+
+.about-cv-label {
+  display: block;
+
+  margin-bottom: 7px;
+
+  color: var(--color-pink);
+
+  font-size: 0.7rem;
+
+  font-weight: 700;
+
+  letter-spacing: 2px;
+}
+
+.about-cv-content h3 {
+  margin: 0 0 8px;
+
+  color: var(--text-primary);
+
+  font-size: 1.25rem;
+
+  font-weight: 600;
+
+  line-height: 1.4;
+}
+
+.about-cv-content p {
+  max-width: 600px;
+
+  margin: 0;
+
+  color: var(--text-secondary);
+
+  font-size: 0.9rem;
+
+  line-height: 1.7;
+}
+
+
+/* =================================
+   CV BUTTON
+================================= */
+
+.about-cv-button {
+  display: inline-flex;
+
+  align-items: center;
+
+  justify-content: center;
+
+  gap: 10px;
+
+  flex-shrink: 0;
+
+  padding: 11px 20px;
+
+  border: 1px solid var(--color-blue);
+
+  border-radius: 8px;
+
+  background: transparent;
+
+  color: var(--color-blue);
+
+  font-size: 0.9rem;
+
+  font-weight: 600;
+
+  text-decoration: none;
+
+  transition:
+    color 0.3s ease,
+    background 0.3s ease,
+    transform 0.3s ease,
+    box-shadow 0.3s ease;
+}
+
+.about-cv-button span {
+  font-size: 1.1rem;
+
+  transition:
+    transform 0.3s ease;
+}
+
+.about-cv-button:hover {
+  color: #ffffff;
+
+  background: var(--color-blue);
+
+  transform: translateY(-2px);
+
+  box-shadow:
+    var(--shadow-blue);
+}
+
+.about-cv-button:hover span {
+  transform:
+    translate(2px, -2px);
+}
+
+
+/* =================================
+   FOCUS ACCESSIBILITY
+================================= */
+
+.about-cv-button:focus-visible {
+  outline: 2px solid var(--color-blue);
+
+  outline-offset: 4px;
+}
+
+
+/* =================================
+   LOADING / ERROR
+================================= */
+
+.about-state {
+  min-height: 50vh;
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: center;
+
+  text-align: center;
+}
+
+
+/* =================================
+   TABLET
+================================= */
+
+@media (max-width: 800px) {
+
+  .about {
+    padding:
+      90px 20px
+      80px;
+  }
+
+
+  .about-heading {
+    margin-bottom: 50px;
+  }
+
+
+  .about-introduction {
+    padding: 30px;
+  }
+
+
+  .about-grid {
+    grid-template-columns: 1fr;
+  }
+
+
+  .about-cv {
+    align-items: flex-start;
+
+    flex-direction: column;
+  }
+
+}
+
+
+/* =================================
+   MOBILE
+================================= */
+
+@media (max-width: 600px) {
+
+  .about {
+    padding:
+      75px 20px
+      65px;
+
+    scroll-margin-top: 65px;
+  }
+
+
+  .about-heading {
+    margin-bottom: 45px;
+  }
+
+
+  .about-introduction {
+    padding: 25px;
+
+    margin-bottom: 35px;
+
+    border-radius: 14px;
+  }
+
+
+  .about-introduction-content h3 {
+    font-size: 1.25rem;
+  }
+
+
+  .about-introduction-content p {
+    font-size: 0.95rem;
+
+    line-height: 1.75;
+  }
+
+
+  .about-card {
+    min-height: auto;
+
+    padding: 23px;
+
+    border-radius: 13px;
+  }
+
+
+  .about-card-content h3 {
+    font-size: 1.08rem;
+  }
+
+
+  .about-card-content p {
+    font-size: 0.93rem;
+
+    line-height: 1.7;
+  }
+
+
+  .about-cv {
+    padding: 25px;
+
+    margin-top: 35px;
+
+    gap: 22px;
+  }
+
+
+  .about-cv-content h3 {
+    font-size: 1.15rem;
+  }
+
+
+  .about-cv-button {
+    width: 100%;
+  }
+
+}
+
+
+/* =================================
+   TRÈS PETIT MOBILE
+================================= */
+
+@media (max-width: 360px) {
+
+  .about {
+    padding-left: 15px;
+
+    padding-right: 15px;
+  }
+
+
+  .about-introduction {
+    padding: 20px;
+  }
+
+
+  .about-card {
+    padding: 20px;
+  }
+
+
+  .about-cv {
+    padding: 20px;
+  }
+
+}
+
+
+/* =================================
+   RÉDUCTION DES ANIMATIONS
+================================= */
+
+@media (prefers-reduced-motion: reduce) {
+
+  .about-introduction,
+  .about-card,
+  .about-cv,
+  .about-cv-button,
+  .about-cv-button span {
+    transition: none;
+  }
+
+  .about-introduction:hover,
+  .about-card:hover,
+  .about-cv:hover,
+  .about-cv-button:hover {
+    transform: none;
+  }
+
+  .about-card::before {
+    transition: none;
+  }
+
+}

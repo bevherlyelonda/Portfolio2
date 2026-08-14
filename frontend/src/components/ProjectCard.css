@@ -1,0 +1,379 @@
+/* =================================
+   PROJECT CARD
+================================= */
+
+.project-card {
+  position: relative;
+
+  height: 100%;
+
+  min-height: 360px;
+
+  display: flex;
+
+  flex-direction: column;
+
+  padding: 32px;
+
+  box-sizing: border-box;
+
+  background:
+    linear-gradient(
+      145deg,
+      rgba(0, 123, 255, 0.045),
+      rgba(232, 62, 140, 0.025)
+    ),
+    var(--surface);
+
+  border: 1px solid var(--border);
+
+  border-radius: 16px;
+
+  overflow: hidden;
+
+  transition:
+    transform 0.3s ease,
+    border-color 0.3s ease,
+    box-shadow 0.3s ease;
+}
+
+
+/* =================================
+   TOP ACCENT
+================================= */
+
+.project-card::before {
+  content: "";
+
+  position: absolute;
+
+  top: 0;
+  left: 0;
+
+  width: 100%;
+
+  height: 3px;
+
+  background:
+    var(--gradient-primary);
+
+  transform: scaleX(0);
+
+  transform-origin: left;
+
+  transition:
+    transform 0.4s ease;
+}
+
+
+.project-card:hover::before {
+  transform: scaleX(1);
+}
+
+
+.project-card:hover {
+  transform: translateY(-6px);
+
+  border-color:
+    rgba(0, 123, 255, 0.45);
+
+  box-shadow:
+    var(--shadow-blue);
+}
+
+
+/* =================================
+   CATEGORY
+================================= */
+
+.project-card-category {
+  align-self: flex-start;
+
+  display: inline-flex;
+
+  align-items: center;
+
+  gap: 8px;
+
+  margin-bottom: 18px;
+
+  padding: 6px 10px;
+
+  color: var(--color-pink);
+
+  background:
+    rgba(232, 62, 140, 0.07);
+
+  border: 1px solid
+    rgba(232, 62, 140, 0.25);
+
+  border-radius: 6px;
+
+  font-size: 0.68rem;
+
+  font-weight: 700;
+
+  letter-spacing: 1.2px;
+
+  text-transform: uppercase;
+}
+
+
+/* =================================
+   CATEGORY DOT
+================================= */
+
+.project-card-category-dot {
+  width: 6px;
+
+  height: 6px;
+
+  flex-shrink: 0;
+
+  border-radius: 50%;
+
+  background: var(--color-pink);
+
+  box-shadow:
+    0 0 8px rgba(232, 62, 140, 0.5);
+}
+
+
+/* =================================
+   TITLE
+================================= */
+
+.project-card-title {
+  margin: 0;
+
+  color: var(--text-primary);
+
+  font-size: 1.35rem;
+
+  line-height: 1.4;
+
+  letter-spacing: -0.3px;
+}
+
+
+/* =================================
+   TITLE HOVER
+================================= */
+
+.project-card:hover
+.project-card-title {
+  color: var(--color-blue);
+
+  transition:
+    color 0.3s ease;
+}
+
+
+/* =================================
+   DIVIDER
+================================= */
+
+.project-card-divider {
+  width: 45px;
+
+  height: 2px;
+
+  margin:
+    18px 0
+    20px;
+
+  background:
+    var(--gradient-primary);
+
+  border-radius: 10px;
+
+  transition:
+    width 0.35s ease;
+}
+
+
+.project-card:hover
+.project-card-divider {
+  width: 80px;
+}
+
+
+/* =================================
+   DESCRIPTION
+================================= */
+
+.project-card-description {
+  margin: 0;
+
+  color: var(--text-secondary);
+
+  font-size: 0.92rem;
+
+  line-height: 1.8;
+}
+
+
+/* =================================
+   FOOTER
+================================= */
+
+.project-card-footer {
+  display: flex;
+
+  align-items: center;
+
+  justify-content: flex-end;
+
+  margin-top: auto;
+
+  padding-top: 30px;
+}
+
+
+/* =================================
+   BUTTON
+================================= */
+
+.project-card-button {
+  display: inline-flex;
+
+  align-items: center;
+
+  justify-content: center;
+
+  gap: 10px;
+
+  padding:
+    10px 15px;
+
+  color: var(--color-blue);
+
+  background:
+    rgba(0, 123, 255, 0.05);
+
+  border: 1px solid
+    rgba(0, 123, 255, 0.35);
+
+  border-radius: 8px;
+
+  font-size: 0.82rem;
+
+  font-weight: 600;
+
+  text-decoration: none;
+
+  transition:
+    color 0.3s ease,
+    background 0.3s ease,
+    border-color 0.3s ease,
+    transform 0.3s ease,
+    box-shadow 0.3s ease;
+}
+
+
+/* =================================
+   BUTTON HOVER
+================================= */
+
+.project-card-button:hover {
+  color: #ffffff;
+
+  background:
+    var(--color-blue);
+
+  border-color:
+    var(--color-blue);
+
+  transform:
+    translateY(-2px);
+
+  box-shadow:
+    0 8px 20px
+    rgba(0, 123, 255, 0.25);
+}
+
+
+/* =================================
+   ARROW
+================================= */
+
+.project-card-arrow {
+  font-size: 1rem;
+
+  transition:
+    transform 0.3s ease;
+}
+
+
+.project-card-button:hover
+.project-card-arrow {
+  transform:
+    translateX(4px);
+}
+
+
+/* =================================
+   FOCUS ACCESSIBILITY
+================================= */
+
+.project-card-button:focus-visible {
+  outline:
+    2px solid var(--color-blue);
+
+  outline-offset: 4px;
+}
+
+
+/* =================================
+   MOBILE
+================================= */
+
+@media (max-width: 600px) {
+
+  .project-card {
+    min-height: 330px;
+
+    padding: 25px;
+  }
+
+
+  .project-card-category {
+    margin-bottom: 15px;
+  }
+
+
+  .project-card-title {
+    font-size: 1.2rem;
+  }
+
+
+  .project-card-description {
+    font-size: 0.88rem;
+
+    line-height: 1.75;
+  }
+
+
+  .project-card-footer {
+    padding-top: 25px;
+  }
+
+
+  .project-card-button {
+    width: 100%;
+  }
+
+}
+
+
+/* =================================
+   VERY SMALL MOBILE
+================================= */
+
+@media (max-width: 360px) {
+
+  .project-card {
+    padding: 21px;
+  }
+
+}

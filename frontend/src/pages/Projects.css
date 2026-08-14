@@ -1,0 +1,278 @@
+/* =================================
+   ALL PROJECTS PAGE
+================================= */
+
+.all-projects {
+  min-height: 100vh;
+
+  padding-top: 75px;
+
+  background:
+    linear-gradient(
+      180deg,
+      var(--color-black) 0%,
+      var(--surface) 45%,
+      var(--color-black) 100%
+    );
+}
+
+
+/* =================================
+   CONTAINER
+================================= */
+
+.all-projects-container {
+  width: 100%;
+
+  max-width: 1150px;
+
+  margin: 0 auto;
+
+  padding:
+    0 25px;
+
+  box-sizing: border-box;
+}
+
+
+/* =================================
+   HERO
+================================= */
+
+.all-projects-hero {
+  padding:
+    100px 0
+    75px;
+
+  text-align: center;
+}
+
+
+/* =================================
+   TITLE
+================================= */
+
+.all-projects-hero h1 {
+  margin:
+    0;
+
+  color: var(--text-primary);
+
+  font-size:
+    clamp(
+      2.4rem,
+      5vw,
+      4rem
+    );
+
+  line-height: 1.15;
+
+  letter-spacing: -1.5px;
+}
+
+
+/* =================================
+   TITLE GRADIENT
+================================= */
+
+.all-projects-hero h1 span {
+  background:
+    var(--gradient-primary);
+
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+
+  background-clip: text;
+}
+
+
+/* =================================
+   INTRO
+================================= */
+
+.all-projects-hero p {
+  max-width: 700px;
+
+  margin:
+    25px auto 0;
+
+  color:
+    var(--text-secondary);
+
+  font-size:
+    1rem;
+
+  line-height:
+    1.8;
+}
+
+
+/* =================================
+   PROJECT LIST
+================================= */
+
+.all-projects-list {
+  padding:
+    20px 0
+    110px;
+}
+
+
+/* =================================
+   PROJECT GRID
+================================= */
+
+.all-projects-grid {
+  display: grid;
+
+  grid-template-columns:
+    repeat(
+      2,
+      minmax(0, 1fr)
+    );
+
+  gap: 25px;
+}
+
+
+/* =================================
+   EMPTY
+================================= */
+
+.all-projects-empty {
+  padding:
+    50px 30px;
+
+  text-align: center;
+
+  background:
+    var(--surface);
+
+  border:
+    1px solid var(--border);
+
+  border-radius:
+    16px;
+
+  color:
+    var(--text-secondary);
+}
+
+
+/* =================================
+   LOADING / ERROR
+================================= */
+
+.all-projects-state {
+  min-height: 100vh;
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: center;
+
+  color:
+    var(--text-secondary);
+}
+
+
+/* =================================
+   TABLET
+================================= */
+
+@media (max-width: 850px) {
+
+  .all-projects {
+    padding-top: 65px;
+  }
+
+
+  .all-projects-hero {
+    padding:
+      80px 0
+      60px;
+  }
+
+
+  .all-projects-grid {
+    grid-template-columns:
+      1fr;
+
+    max-width:
+      650px;
+
+    margin:
+      0 auto;
+  }
+
+
+  .all-projects-list {
+    padding-bottom:
+      80px;
+  }
+
+}
+
+
+/* =================================
+   MOBILE
+================================= */
+
+@media (max-width: 600px) {
+
+  .all-projects-container {
+    padding:
+      0 20px;
+  }
+
+
+  .all-projects-hero {
+    padding:
+      65px 0
+      45px;
+  }
+
+
+  .all-projects-hero h1 {
+    font-size:
+      2.25rem;
+
+    letter-spacing:
+      -0.8px;
+  }
+
+
+  .all-projects-hero p {
+    font-size:
+      0.92rem;
+  }
+
+
+  .all-projects-list {
+    padding:
+      10px 0
+      65px;
+  }
+
+}
+
+
+/* =================================
+   VERY SMALL MOBILE
+================================= */
+
+@media (max-width: 360px) {
+
+  .all-projects-container {
+    padding:
+      0 15px;
+  }
+
+
+  .all-projects-hero h1 {
+    font-size:
+      2rem;
+  }
+
+}

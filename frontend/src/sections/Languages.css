@@ -1,0 +1,530 @@
+/* =================================
+   LANGUAGES
+================================= */
+
+.languages {
+  position: relative;
+
+  padding:
+    110px 25px
+    100px;
+
+  background:
+    linear-gradient(
+      180deg,
+      var(--color-black),
+      var(--surface)
+    );
+}
+
+
+/* =================================
+   SECTION HEADING
+================================= */
+
+.languages-heading {
+  margin-bottom:
+    65px;
+}
+
+.languages .section-heading {
+  text-align:
+    center;
+}
+
+.languages .section-label {
+  display:
+    inline-block;
+
+  margin-bottom:
+    12px;
+
+  color:
+    var(--color-orange);
+
+  font-size:
+    0.78rem;
+
+  font-weight:
+    700;
+
+  letter-spacing:
+    2px;
+}
+
+.languages .section-heading h2 {
+  margin:
+    0;
+
+  font-size:
+    clamp(
+      2rem,
+      4vw,
+      3rem
+    );
+
+  color:
+    var(--text-primary);
+}
+
+.languages .section-heading h2 span {
+  background:
+    var(--gradient-primary);
+
+  -webkit-background-clip:
+    text;
+
+  -webkit-text-fill-color:
+    transparent;
+
+  background-clip:
+    text;
+}
+
+.languages .section-line {
+  width:
+    65px;
+
+  height:
+    3px;
+
+  margin:
+    18px auto 0;
+
+  border-radius:
+    10px;
+
+  background:
+    var(--gradient-primary);
+}
+
+
+/* =================================
+   CONTAINER
+================================= */
+
+.languages-container {
+  width:
+    100%;
+
+  max-width:
+    950px;
+
+  margin:
+    0 auto;
+}
+
+
+/* =================================
+   LIST
+================================= */
+
+.languages-list {
+  border-top:
+    1px solid
+    var(--border);
+}
+
+
+/* =================================
+   LANGUAGE ROW
+================================= */
+
+.language-row {
+  position:
+    relative;
+
+  display:
+    grid;
+
+  grid-template-columns:
+    80px 1fr auto;
+
+  align-items:
+    center;
+
+  gap:
+    30px;
+
+  min-height:
+    125px;
+
+  padding:
+    25px 10px;
+
+  border-bottom:
+    1px solid
+    var(--border);
+
+  transition:
+    padding 0.3s ease,
+    background 0.3s ease;
+}
+
+
+/* =================================
+   LANGUAGE CODE
+================================= */
+
+.language-code {
+  width:
+    58px;
+
+  height:
+    58px;
+
+  display:
+    flex;
+
+  align-items:
+    center;
+
+  justify-content:
+    center;
+
+  border:
+    1px solid
+    var(--color-blue);
+
+  border-radius:
+    50%;
+
+  color:
+    var(--color-blue);
+
+  background:
+    rgba(0, 123, 255, 0.05);
+
+  font-family:
+    var(--mono);
+
+  font-size:
+    0.9rem;
+
+  font-weight:
+    700;
+
+  letter-spacing:
+    1px;
+
+  transition:
+    background 0.3s ease,
+    color 0.3s ease,
+    border-color 0.3s ease,
+    transform 0.3s ease;
+}
+
+
+/* =================================
+   LANGUAGE MAIN
+================================= */
+
+.language-main h3 {
+  margin:
+    0 0 5px;
+
+  color:
+    var(--text-primary);
+
+  font-size:
+    1.35rem;
+
+  font-weight:
+    600;
+
+  transition:
+    color 0.3s ease;
+}
+
+.language-main p {
+  margin:
+    0;
+
+  color:
+    var(--text-secondary);
+
+  font-size:
+    0.88rem;
+}
+
+
+/* =================================
+   LANGUAGE LEVEL
+================================= */
+
+.language-level {
+  display:
+    flex;
+
+  align-items:
+    center;
+
+  justify-content:
+    center;
+
+  min-width:
+    125px;
+
+  padding:
+    8px 14px;
+
+  border:
+    1px solid
+    rgba(232, 62, 140, 0.45);
+
+  border-radius:
+    20px;
+
+  background:
+    rgba(232, 62, 140, 0.05);
+
+  color:
+    var(--color-pink);
+
+  font-size:
+    0.78rem;
+
+  font-weight:
+    600;
+
+  letter-spacing:
+    0.4px;
+
+  transition:
+    background 0.3s ease,
+    border-color 0.3s ease,
+    transform 0.3s ease;
+}
+
+
+/* =================================
+   HOVER
+================================= */
+
+.language-row:hover {
+  padding-left:
+    20px;
+
+  padding-right:
+    20px;
+
+  background:
+    linear-gradient(
+      90deg,
+      rgba(0, 123, 255, 0.04),
+      rgba(232, 62, 140, 0.025)
+    );
+}
+
+.language-row:hover .language-code {
+  color:
+    #ffffff;
+
+  background:
+    var(--color-blue);
+
+  border-color:
+    var(--color-blue);
+
+  transform:
+    rotate(5deg);
+}
+
+.language-row:hover .language-main h3 {
+  color:
+    var(--color-blue);
+}
+
+.language-row:hover .language-level {
+  background:
+    rgba(232, 62, 140, 0.12);
+
+  border-color:
+    var(--color-pink);
+
+  transform:
+    translateX(-4px);
+}
+
+
+/* =================================
+   ACCENT LINE
+================================= */
+
+.language-row::before {
+  content:
+    "";
+
+  position:
+    absolute;
+
+  left:
+    0;
+
+  top:
+    50%;
+
+  width:
+    0;
+
+  height:
+    35px;
+
+  transform:
+    translateY(-50%);
+
+  border-radius:
+    0 5px 5px 0;
+
+  background:
+    var(--gradient-primary);
+
+  transition:
+    width 0.3s ease;
+}
+
+.language-row:hover::before {
+  width:
+    3px;
+}
+
+
+/* =================================
+   LOADING / ERROR
+================================= */
+
+.languages-state {
+  min-height:
+    50vh;
+
+  display:
+    flex;
+
+  align-items:
+    center;
+
+  justify-content:
+    center;
+}
+
+
+/* =================================
+   TABLET
+================================= */
+
+@media (max-width: 800px) {
+
+  .languages {
+    padding:
+      90px 20px
+      80px;
+  }
+
+  .language-row {
+    grid-template-columns:
+      70px 1fr auto;
+
+    gap:
+      22px;
+  }
+
+}
+
+
+/* =================================
+   MOBILE
+================================= */
+
+@media (max-width: 600px) {
+
+  .languages {
+    padding:
+      75px 20px
+      65px;
+  }
+
+  .languages-heading {
+    margin-bottom:
+      45px;
+  }
+
+  .language-row {
+    grid-template-columns:
+      55px 1fr;
+
+    gap:
+      18px;
+
+    padding:
+      22px 5px;
+  }
+
+  .language-code {
+    width:
+      48px;
+
+    height:
+      48px;
+
+    font-size:
+      0.8rem;
+  }
+
+  .language-main h3 {
+    font-size:
+      1.15rem;
+  }
+
+  .language-main p {
+    font-size:
+      0.8rem;
+  }
+
+  .language-level {
+    grid-column:
+      2;
+
+    justify-self:
+      start;
+
+    min-width:
+      auto;
+
+    padding:
+      6px 12px;
+
+    font-size:
+      0.72rem;
+  }
+
+  .language-row:hover {
+    padding-left:
+      10px;
+
+    padding-right:
+      10px;
+  }
+
+}
+
+
+/* =================================
+   VERY SMALL MOBILE
+================================= */
+
+@media (max-width: 360px) {
+
+  .languages {
+    padding-left:
+      15px;
+
+    padding-right:
+      15px;
+  }
+
+  .language-row {
+    gap:
+      14px;
+  }
+
+}

@@ -1,0 +1,1001 @@
+/* =================================
+   PRESENTATION / HERO
+================================= */
+
+.presentation {
+  position: relative;
+
+  min-height: 100vh;
+
+  min-height: 100svh;
+
+  display: flex;
+
+  align-items: center;
+
+  overflow: hidden;
+
+  padding:
+    120px 25px
+    90px;
+
+  background:
+    radial-gradient(
+      circle at 15% 50%,
+      rgba(0, 123, 255, 0.08),
+      transparent 35%
+    ),
+    radial-gradient(
+      circle at 85% 40%,
+      rgba(232, 62, 140, 0.06),
+      transparent 35%
+    ),
+    var(--color-black);
+}
+
+
+/* =================================
+   LUEURS D'ARRIÈRE-PLAN
+================================= */
+
+.presentation-background-glow {
+  position: absolute;
+
+  width: 300px;
+  height: 300px;
+
+  border-radius: 50%;
+
+  pointer-events: none;
+
+  filter: blur(80px);
+
+  opacity: 0.12;
+}
+
+.presentation-background-glow-one {
+  top: 10%;
+  left: -180px;
+
+  background:
+    var(--color-blue);
+}
+
+.presentation-background-glow-two {
+  right: -180px;
+  bottom: 5%;
+
+  background:
+    var(--color-pink);
+}
+
+
+/* =================================
+   CONTENEUR
+================================= */
+
+.presentation-container {
+  position: relative;
+
+  z-index: 2;
+
+  width: 100%;
+
+  max-width: 1150px;
+
+  margin: 0 auto;
+
+  display: grid;
+
+  grid-template-columns:
+    minmax(280px, 0.8fr)
+    minmax(400px, 1.2fr);
+
+  align-items: center;
+
+  gap: 80px;
+}
+
+
+/* =================================
+   PHOTO
+================================= */
+
+.presentation-photo-wrapper {
+  position: relative;
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: center;
+
+  animation:
+    presentationPhotoIn
+    0.8s
+    cubic-bezier(0.22, 1, 0.36, 1)
+    0.1s
+    both;
+}
+
+
+/* =================================
+   LUMIÈRE PHOTO
+================================= */
+
+.presentation-photo-glow {
+  position: absolute;
+
+  width: 350px;
+  height: 350px;
+
+  border-radius: 50%;
+
+  background:
+    linear-gradient(
+      135deg,
+      rgba(0, 123, 255, 0.22),
+      rgba(232, 62, 140, 0.16)
+    );
+
+  filter: blur(55px);
+
+  opacity: 0.65;
+
+  pointer-events: none;
+}
+
+
+/* =================================
+   CADRE PHOTO
+================================= */
+
+.presentation-photo-frame {
+  position: relative;
+
+  width: 340px;
+  height: 420px;
+
+  padding: 3px;
+
+  border-radius: 20px;
+
+  background:
+    var(--gradient-primary);
+
+  box-shadow:
+    0 25px 60px rgba(0, 0, 0, 0.45),
+    0 0 45px rgba(0, 123, 255, 0.12);
+
+  overflow: hidden;
+}
+
+
+/* =================================
+   BORDURE INTERNE
+================================= */
+
+.presentation-photo-border {
+  position: absolute;
+
+  inset: 3px;
+
+  z-index: 2;
+
+  border:
+    1px solid
+    rgba(255, 255, 255, 0.12);
+
+  border-radius: 17px;
+
+  pointer-events: none;
+}
+
+
+/* =================================
+   PHOTO
+================================= */
+
+.presentation-photo {
+  position: relative;
+
+  z-index: 1;
+
+  width: 100%;
+  height: 100%;
+
+  display: block;
+
+  object-fit: cover;
+
+  border-radius: 17px;
+
+  background:
+    var(--surface);
+
+  filter:
+    saturate(0.95)
+    contrast(1.02);
+
+  transition:
+    transform 0.6s ease,
+    filter 0.6s ease;
+}
+
+.presentation-photo-frame:hover .presentation-photo {
+  transform: scale(1.025);
+
+  filter:
+    saturate(1)
+    contrast(1.03);
+}
+
+
+/* =================================
+   CONTENU
+================================= */
+
+.presentation-content {
+  max-width: 680px;
+
+  animation:
+    presentationContentIn
+    0.8s
+    cubic-bezier(0.22, 1, 0.36, 1)
+    both;
+}
+
+
+/* =================================
+   STATUT
+================================= */
+
+.presentation-status {
+  display: inline-flex;
+
+  align-items: center;
+
+  gap: 9px;
+
+  margin-bottom: 20px;
+
+  padding:
+    7px 12px;
+
+  border:
+    1px solid
+    rgba(56, 189, 248, 0.18);
+
+  border-radius: 999px;
+
+  background:
+    rgba(56, 189, 248, 0.05);
+
+  color:
+    var(--text-secondary);
+
+  font-family:
+    var(--mono);
+
+  font-size:
+    0.68rem;
+
+  font-weight:
+    600;
+
+  letter-spacing:
+    0.5px;
+}
+
+
+/* =================================
+   POINT DU STATUT
+================================= */
+
+.presentation-status-dot {
+  width: 7px;
+  height: 7px;
+
+  flex-shrink: 0;
+
+  border-radius: 50%;
+
+  background:
+    var(--color-blue);
+
+  box-shadow:
+    0 0 0 4px
+    rgba(56, 189, 248, 0.08);
+
+  animation:
+    statusPulse
+    2.5s
+    ease-in-out
+    infinite;
+}
+
+
+/* =================================
+   INTRODUCTION
+================================= */
+
+.presentation-intro {
+  margin:
+    0 0 8px;
+
+  color:
+    var(--color-blue);
+
+  font-size:
+    1rem;
+
+  font-weight:
+    600;
+
+  letter-spacing:
+    1px;
+}
+
+
+/* =================================
+   NOM
+================================= */
+
+.presentation-name {
+  margin:
+    0;
+
+  color:
+    var(--text-primary);
+
+  font-size:
+    clamp(
+      3rem,
+      6vw,
+      5rem
+    );
+
+  line-height:
+    1.02;
+
+  letter-spacing:
+    -2.5px;
+
+  font-weight:
+    750;
+}
+
+
+/* =================================
+   LIGNE DÉCORATIVE
+================================= */
+
+.presentation-line {
+  width:
+    90px;
+
+  height:
+    3px;
+
+  margin:
+    22px 0;
+
+  border-radius:
+    5px;
+
+  background:
+    var(--gradient-primary);
+
+  box-shadow:
+    0 0 18px
+    rgba(0, 123, 255, 0.18);
+}
+
+
+/* =================================
+   TITRE PROFESSIONNEL
+================================= */
+
+.presentation-title {
+  max-width:
+    680px;
+
+  margin:
+    0 0 20px;
+
+  color:
+    var(--text-primary);
+
+  font-size:
+    clamp(
+      1.3rem,
+      2.5vw,
+      2rem
+    );
+
+  line-height:
+    1.35;
+
+  font-weight:
+    600;
+}
+
+
+/* =================================
+   DESCRIPTION
+================================= */
+
+.presentation-description {
+  max-width:
+    650px;
+
+  margin:
+    0 0 35px;
+
+  color:
+    var(--text-secondary);
+
+  font-size:
+    1.02rem;
+
+  line-height:
+    1.8;
+}
+
+
+/* =================================
+   ACTIONS
+================================= */
+
+.presentation-actions {
+  display:
+    flex;
+
+  align-items:
+    center;
+
+  gap:
+    14px;
+
+  flex-wrap:
+    wrap;
+}
+
+
+/* =================================
+   BOUTONS
+================================= */
+
+.presentation-button {
+  display:
+    inline-flex;
+
+  align-items:
+    center;
+
+  justify-content:
+    center;
+
+  gap:
+    12px;
+
+  min-height:
+    48px;
+
+  padding:
+    12px 20px;
+
+  border-radius:
+    9px;
+
+  font-size:
+    0.88rem;
+
+  font-weight:
+    600;
+
+  text-decoration:
+    none;
+
+  transition:
+    transform 0.3s ease,
+    box-shadow 0.3s ease,
+    background 0.3s ease,
+    border-color 0.3s ease;
+}
+
+
+/* =================================
+   FLÈCHE DES BOUTONS
+================================= */
+
+.presentation-button-arrow {
+  font-size:
+    1rem;
+
+  transition:
+    transform 0.3s ease;
+}
+
+.presentation-button:hover
+.presentation-button-arrow {
+  transform:
+    translateX(4px);
+}
+
+
+/* =================================
+   SCROLL INDICATOR
+================================= */
+
+.presentation-scroll {
+  position:
+    absolute;
+
+  z-index:
+    3;
+
+  left:
+    50%;
+
+  bottom:
+    28px;
+
+  transform:
+    translateX(-50%);
+
+  display:
+    flex;
+
+  flex-direction:
+    column;
+
+  align-items:
+    center;
+
+  gap:
+    5px;
+
+  color:
+    var(--text-secondary);
+
+  text-decoration:
+    none;
+
+  opacity:
+    0.7;
+
+  transition:
+    color 0.3s ease,
+    opacity 0.3s ease;
+}
+
+.presentation-scroll:hover {
+  color:
+    var(--color-blue);
+
+  opacity:
+    1;
+}
+
+.presentation-scroll-text {
+  font-family:
+    var(--mono);
+
+  font-size:
+    0.62rem;
+
+  letter-spacing:
+    1.5px;
+
+  text-transform:
+    uppercase;
+}
+
+.presentation-scroll-arrow {
+  font-size:
+    1rem;
+
+  animation:
+    scrollBounce
+    2s
+    ease-in-out
+    infinite;
+}
+
+
+/* =================================
+   ÉTAT CHARGEMENT / ERREUR
+================================= */
+
+.presentation-state {
+  justify-content:
+    center;
+
+  text-align:
+    center;
+
+  min-height:
+    100vh;
+
+  min-height:
+    100svh;
+
+  color:
+    var(--text-secondary);
+}
+
+
+/* =================================
+   ANIMATIONS
+================================= */
+
+@keyframes presentationContentIn {
+
+  from {
+    opacity:
+      0;
+
+    transform:
+      translateX(30px);
+  }
+
+  to {
+    opacity:
+      1;
+
+    transform:
+      translateX(0);
+  }
+}
+
+
+@keyframes presentationPhotoIn {
+
+  from {
+    opacity:
+      0;
+
+    transform:
+      translateX(-30px);
+  }
+
+  to {
+    opacity:
+      1;
+
+    transform:
+      translateX(0);
+  }
+}
+
+
+@keyframes statusPulse {
+
+  0%,
+  100% {
+    opacity:
+      0.65;
+
+    transform:
+      scale(0.9);
+  }
+
+  50% {
+    opacity:
+      1;
+
+    transform:
+      scale(1);
+  }
+}
+
+
+@keyframes scrollBounce {
+
+  0%,
+  100% {
+    transform:
+      translateY(0);
+  }
+
+  50% {
+    transform:
+      translateY(4px);
+  }
+}
+
+
+/* =================================
+   TABLETTE
+================================= */
+
+@media (max-width: 1000px) {
+
+  .presentation-container {
+    gap:
+      55px;
+  }
+
+  .presentation-photo-frame {
+    width:
+      300px;
+
+    height:
+      375px;
+  }
+
+  .presentation-photo-glow {
+    width:
+      310px;
+
+    height:
+      310px;
+  }
+
+}
+
+
+/* =================================
+   TABLETTE / MOBILE
+================================= */
+
+@media (max-width: 900px) {
+
+  .presentation {
+    padding:
+      110px 25px
+      90px;
+  }
+
+  .presentation-container {
+    grid-template-columns:
+      1fr;
+
+    gap:
+      50px;
+
+    text-align:
+      center;
+  }
+
+  .presentation-photo-wrapper {
+    order:
+      1;
+  }
+
+  .presentation-content {
+    order:
+      2;
+
+    margin:
+      0 auto;
+  }
+
+  .presentation-status {
+    margin-bottom:
+      17px;
+  }
+
+  .presentation-line {
+    margin:
+      20px auto;
+  }
+
+  .presentation-description {
+    margin-left:
+      auto;
+
+    margin-right:
+      auto;
+  }
+
+  .presentation-actions {
+    justify-content:
+      center;
+  }
+
+  .presentation-scroll {
+    display:
+      none;
+  }
+
+}
+
+
+/* =================================
+   MOBILE
+================================= */
+
+@media (max-width: 600px) {
+
+  .presentation {
+    padding:
+      95px 20px
+      65px;
+  }
+
+  .presentation-container {
+    gap:
+      38px;
+  }
+
+  .presentation-photo-frame {
+    width:
+      230px;
+
+    height:
+      290px;
+
+    border-radius:
+      16px;
+  }
+
+  .presentation-photo-border {
+    border-radius:
+      13px;
+  }
+
+  .presentation-photo {
+    border-radius:
+      13px;
+  }
+
+  .presentation-photo-glow {
+    width:
+      240px;
+
+    height:
+      240px;
+
+    filter:
+      blur(45px);
+  }
+
+  .presentation-status {
+    font-size:
+      0.63rem;
+
+    padding:
+      6px 10px;
+  }
+
+  .presentation-name {
+    font-size:
+      clamp(
+        2.4rem,
+        12vw,
+        3.5rem
+      );
+
+    letter-spacing:
+      -1.5px;
+  }
+
+  .presentation-title {
+    font-size:
+      1.2rem;
+
+    line-height:
+      1.45;
+  }
+
+  .presentation-description {
+    font-size:
+      0.95rem;
+
+    line-height:
+      1.7;
+  }
+
+  .presentation-actions {
+    flex-direction:
+      column;
+
+    width:
+      100%;
+  }
+
+  .presentation-button {
+    width:
+      100%;
+
+    max-width:
+      320px;
+  }
+
+}
+
+
+/* =================================
+   TRÈS PETIT MOBILE
+================================= */
+
+@media (max-width: 360px) {
+
+  .presentation {
+    padding-left:
+      15px;
+
+    padding-right:
+      15px;
+  }
+
+  .presentation-photo-frame {
+    width:
+      200px;
+
+    height:
+      255px;
+  }
+
+  .presentation-photo-glow {
+    width:
+      205px;
+
+    height:
+      205px;
+  }
+
+  .presentation-name {
+    font-size:
+      2.25rem;
+  }
+
+  .presentation-title {
+    font-size:
+      1.08rem;
+  }
+
+  .presentation-description {
+    font-size:
+      0.9rem;
+  }
+
+}
+
+
+/* =================================
+   ACCESSIBILITÉ
+================================= */
+
+.presentation-button:focus-visible,
+.presentation-scroll:focus-visible {
+  outline:
+    2px solid
+    var(--color-blue);
+
+  outline-offset:
+    4px;
+}
+
+
+/* =================================
+   RÉDUCTION DES ANIMATIONS
+================================= */
+
+@media (prefers-reduced-motion: reduce) {
+
+  .presentation-content,
+  .presentation-photo-wrapper {
+    animation:
+      none;
+  }
+
+  .presentation-status-dot,
+  .presentation-scroll-arrow {
+    animation:
+      none;
+  }
+
+  .presentation-photo {
+    transition:
+      none;
+  }
+
+  .presentation-button,
+  .presentation-scroll {
+    transition:
+      none;
+  }
+}
