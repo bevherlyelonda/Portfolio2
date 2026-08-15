@@ -51,13 +51,6 @@ class About(models.Model):
     short_description = models.TextField()
     biography = models.TextField()
 
-    # Parcours
-    education_summary = models.TextField(blank=True)
-    career_summary = models.TextField(blank=True)
-
-    # Orientation professionnelle
-    current_focus = models.TextField(blank=True)
-    professional_goals = models.TextField(blank=True)
 
     # Informations générales
     location = models.CharField(max_length=200, blank=True)
