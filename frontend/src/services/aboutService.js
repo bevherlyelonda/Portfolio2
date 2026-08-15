@@ -1,5 +1,5 @@
-//const API_URL = `${import.meta.env.VITE_API_URL}/api/about/`;
-const API_URL = "http://127.0.0.1:8000/api/about/";
+const API_URL = `${import.meta.env.VITE_API_URL}/api/about/`;
+//const API_URL = "http://127.0.0.1:8000/api/about/";
 
 export async function getAbout() {
   const response = await fetch(API_URL);
