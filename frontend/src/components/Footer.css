@@ -5,16 +5,51 @@
 .footer {
   position: relative;
 
+  width: 100%;
+
   padding:
-    75px 25px
-    25px;
+    75px 25px 25px;
+
+  box-sizing: border-box;
 
   background:
-    var(--color-black);
+    linear-gradient(
+      180deg,
+      var(--bg-deep),
+      var(--bg)
+    );
 
   border-top:
     1px solid
     var(--border);
+
+  overflow: hidden;
+}
+
+
+/* =================================
+   EFFET LUMINEUX
+================================= */
+
+.footer-glow {
+  position: absolute;
+
+  width: 450px;
+  height: 450px;
+
+  left: -250px;
+  bottom: -300px;
+
+  border-radius: 50%;
+
+  background:
+    radial-gradient(
+      circle,
+      rgba(0, 123, 255, 0.08),
+      transparent 70%
+    );
+
+  pointer-events: none;
 }
 
 
@@ -23,26 +58,24 @@
 ================================= */
 
 .footer-container {
-  width:
-    100%;
+  position: relative;
 
-  max-width:
-    1100px;
+  z-index: 1;
 
-  margin:
-    0 auto;
+  width: 100%;
+  max-width: var(--container-width);
 
-  display:
-    grid;
+  margin: 0 auto;
+
+  display: grid;
 
   grid-template-columns:
-    2fr
+    1.8fr
     1fr
     1.2fr
     1fr;
 
-  gap:
-    50px;
+  gap: 50px;
 }
 
 
@@ -51,61 +84,73 @@
 ================================= */
 
 .footer-brand {
-  max-width:
-    360px;
+  max-width: 380px;
 }
+
+
+/* =================================
+   LOGO
+================================= */
 
 .footer-logo {
-  display:
-    inline-block;
+  display: inline-block;
 
-  margin-bottom:
-    18px;
+  margin-bottom: 18px;
 
-  color:
-    var(--text-primary);
+  color: var(--text-primary);
 
-  font-size:
-    1.25rem;
+  font-size: 1.25rem;
+  font-weight: 750;
 
-  font-weight:
-    700;
+  letter-spacing: -0.3px;
 
-  text-decoration:
-    none;
+  text-decoration: none;
 
   transition:
-    opacity 0.3s ease;
+    color 0.3s ease,
+    opacity 0.3s ease,
+    transform 0.3s ease;
 }
 
+
 .footer-logo:hover {
-  opacity:
-    0.85;
+  color: var(--text-primary);
+
+  opacity: 0.88;
+
+  transform:
+    translateY(-1px);
 }
+
+
+/* =================================
+   LOGO ACCENT
+================================= */
 
 .footer-logo span {
   background:
     var(--gradient-primary);
 
-  -webkit-background-clip:
-    text;
+  -webkit-background-clip: text;
+  background-clip: text;
 
-  -webkit-text-fill-color:
-    transparent;
-
-  background-clip:
-    text;
+  -webkit-text-fill-color: transparent;
 }
 
-.footer-brand p {
+
+/* =================================
+   DESCRIPTION
+================================= */
+
+.footer-description {
   margin:
-    0;
+    0 0 15px;
 
   color:
     var(--text-secondary);
 
   font-size:
-    0.85rem;
+    0.88rem;
 
   line-height:
     1.8;
@@ -113,35 +158,26 @@
 
 
 /* =================================
-   TITRES
+   LOCALISATION
 ================================= */
 
-.footer-title {
-  display:
-    block;
-
-  margin-bottom:
-    20px;
+.footer-location {
+  margin:
+    0;
 
   color:
-    var(--color-blue);
-
-  font-family:
-    var(--mono);
+    var(--text-muted);
 
   font-size:
-    0.68rem;
+    0.78rem;
 
-  font-weight:
-    700;
-
-  letter-spacing:
-    1.5px;
+  line-height:
+    1.7;
 }
 
 
 /* =================================
-   NAVIGATION / CONTACT
+   COLONNES
 ================================= */
 
 .footer-navigation,
@@ -159,32 +195,89 @@
 
 
 /* =================================
-   LIENS
+   TITRES
 ================================= */
 
-.footer-navigation a,
-.footer-contact a {
-  margin-bottom:
-    12px;
+.footer-title {
+  display:
+    block;
+
+  margin:
+    0 0 20px;
+
+  color:
+    var(--color-blue-light);
+
+  font-family:
+    var(--mono);
+
+  font-size:
+    0.68rem;
+
+  font-weight:
+    700;
+
+  letter-spacing:
+    1.8px;
+
+  text-transform:
+    uppercase;
+}
+
+
+/* =================================
+   NAVIGATION
+================================= */
+
+.footer-nav-button {
+  position:
+    relative;
+
+  display:
+    inline-block;
+
+  width:
+    fit-content;
+
+  margin:
+    0 0 11px;
+
+  padding:
+    0;
+
+  border:
+    none;
+
+  background:
+    transparent;
 
   color:
     var(--text-secondary);
 
-  font-size:
-    0.88rem;
+  font-family:
+    inherit;
 
-  text-decoration:
-    none;
+  font-size:
+    0.86rem;
+
+  line-height:
+    1.5;
+
+  text-align:
+    left;
+
+  cursor:
+    pointer;
 
   transition:
     color 0.25s ease,
     transform 0.25s ease;
 }
 
-.footer-navigation a:hover,
-.footer-contact a:hover {
+
+.footer-nav-button:hover {
   color:
-    var(--color-blue);
+    var(--color-blue-light);
 
   transform:
     translateX(4px);
@@ -192,18 +285,136 @@
 
 
 /* =================================
-   LOCALISATION
+   CONTACT
 ================================= */
 
-.footer-location {
+.footer-contact-link {
+  max-width:
+    100%;
+
+  margin:
+    0 0 15px;
+
   color:
     var(--text-secondary);
 
   font-size:
-    0.82rem;
+    0.86rem;
 
   line-height:
     1.5;
+
+  overflow-wrap:
+    anywhere;
+
+  text-decoration:
+    none;
+
+  transition:
+    color 0.25s ease;
+}
+
+
+.footer-contact-link:hover {
+  color:
+    var(--color-blue-light);
+}
+
+
+/* =================================
+   BOUTON CONTACT
+================================= */
+
+.footer-contact-button {
+  display:
+    inline-flex;
+
+  align-items:
+    center;
+
+  justify-content:
+    center;
+
+  gap:
+    8px;
+
+  padding:
+    9px 14px;
+
+  border:
+    1px solid
+    var(--border-blue);
+
+  border-radius:
+    var(--radius-md);
+
+  background:
+    var(--surface-blue);
+
+  color:
+    var(--color-blue-light);
+
+  font-family:
+    inherit;
+
+  font-size:
+    0.78rem;
+
+  font-weight:
+    600;
+
+  text-decoration:
+    none;
+
+  cursor:
+    pointer;
+
+  transition:
+    color 0.25s ease,
+    background 0.25s ease,
+    border-color 0.25s ease,
+    transform 0.25s ease,
+    box-shadow 0.25s ease;
+}
+
+
+.footer-contact-button:hover {
+  color:
+    #ffffff;
+
+  background:
+    var(--color-blue);
+
+  border-color:
+    var(--color-blue);
+
+  transform:
+    translateY(-2px);
+
+  box-shadow:
+    var(--shadow-blue);
+}
+
+
+/* =================================
+   CONTACT ARROW
+================================= */
+
+.footer-contact-button span {
+  font-size:
+    1rem;
+
+  line-height:
+    1;
+
+  transition:
+    transform 0.25s ease;
+}
+
+
+.footer-contact-button:hover span {
+  transform:
+    translateX(3px);
 }
 
 
@@ -220,7 +431,15 @@
 
   gap:
     10px;
+
+  margin:
+    0 0 15px;
 }
+
+
+/* =================================
+   SOCIAL LINK
+================================= */
 
 .footer-social-link {
   width:
@@ -238,18 +457,21 @@
   justify-content:
     center;
 
+  box-sizing:
+    border-box;
+
   border:
     1px solid
     var(--border);
 
   border-radius:
-    10px;
+    var(--radius-md);
+
+  background:
+    var(--surface);
 
   color:
     var(--text-secondary);
-
-  background:
-    rgba(255, 255, 255, 0.025);
 
   text-decoration:
     none;
@@ -262,13 +484,22 @@
     box-shadow 0.3s ease;
 }
 
+
 .footer-social-link svg {
   width:
-    20px;
+    19px;
 
   height:
-    20px;
+    19px;
+
+  display:
+    block;
 }
+
+
+/* =================================
+   SOCIAL HOVER
+================================= */
 
 .footer-social-link:hover {
   transform:
@@ -291,7 +522,7 @@
     #0077b5;
 
   box-shadow:
-    0 8px 20px
+    0 8px 22px
     rgba(0, 119, 181, 0.25);
 }
 
@@ -305,27 +536,55 @@
     #ffffff;
 
   background:
-    #171717;
+    #24292f;
 
   border-color:
-    #444444;
+    #24292f;
 
   box-shadow:
-    0 8px 20px
-    rgba(0, 0, 0, 0.35);
+    0 8px 22px
+    rgba(0, 0, 0, 0.3);
 }
 
 
 /* =================================
-   BOTTOM
+   DESCRIPTION RÉSEAUX
+================================= */
+
+.footer-social-text {
+  max-width:
+    210px;
+
+  margin:
+    0;
+
+  color:
+    var(--text-muted);
+
+  font-size:
+    0.75rem;
+
+  line-height:
+    1.6;
+}
+
+
+/* =================================
+   FOOTER BOTTOM
 ================================= */
 
 .footer-bottom {
+  position:
+    relative;
+
+  z-index:
+    1;
+
   width:
     100%;
 
   max-width:
-    1100px;
+    var(--container-width);
 
   margin:
     60px auto 0;
@@ -350,26 +609,283 @@
     var(--border);
 }
 
+
+/* =================================
+   BOTTOM CONTENT
+================================= */
+
+.footer-bottom-content {
+  display:
+    flex;
+
+  align-items:
+    center;
+
+  justify-content:
+    space-between;
+
+  gap:
+    25px;
+
+  flex:
+    1;
+}
+
+
+/* =================================
+   BOTTOM TEXT
+================================= */
+
 .footer-bottom p {
   margin:
     0;
 
   color:
-    var(--text-secondary);
+    var(--text-muted);
 
   font-size:
-    0.75rem;
+    0.73rem;
+
+  line-height:
+    1.5;
 }
 
 
 /* =================================
-   TABLET
+   NOM COPYRIGHT
 ================================= */
 
-@media (max-width: 900px) {
+.footer-bottom p span {
+  color:
+    var(--text-secondary);
+
+  font-weight:
+    600;
+}
+
+
+/* =================================
+   CREDIT
+================================= */
+
+.footer-credit {
+  text-align:
+    right;
+}
+
+
+/* =================================
+   RETOUR EN HAUT
+================================= */
+
+.footer-back-top {
+  width:
+    42px;
+
+  height:
+    42px;
+
+  flex-shrink:
+    0;
+
+  display:
+    flex;
+
+  align-items:
+    center;
+
+  justify-content:
+    center;
+
+  box-sizing:
+    border-box;
+
+  border:
+    1px solid
+    var(--border);
+
+  border-radius:
+    50%;
+
+  background:
+    var(--surface);
+
+  color:
+    var(--text-secondary);
+
+  font-family:
+    inherit;
+
+  font-size:
+    1.05rem;
+
+  cursor:
+    pointer;
+
+  transition:
+    transform 0.3s ease,
+    color 0.3s ease,
+    background 0.3s ease,
+    border-color 0.3s ease,
+    box-shadow 0.3s ease;
+}
+
+
+.footer-back-top:hover {
+  transform:
+    translateY(-4px);
+
+  color:
+    var(--color-blue-light);
+
+  background:
+    var(--surface-blue);
+
+  border-color:
+    var(--border-blue);
+
+  box-shadow:
+    var(--glow-blue);
+}
+
+
+/* =================================
+   ACCESSIBILITÉ
+================================= */
+
+.footer a:focus-visible,
+.footer button:focus-visible {
+  outline:
+    2px solid
+    var(--color-blue-light);
+
+  outline-offset:
+    4px;
+}
+
+
+/* =================================
+   MODE CLAIR
+================================= */
+
+/*
+   En mode clair :
+   - les textes principaux deviennent noirs
+   - les textes secondaires deviennent gris foncé
+   - les accents restent bleus
+*/
+
+html.light .footer {
+  background:
+    linear-gradient(
+      180deg,
+      var(--bg-deep),
+      var(--bg)
+    );
+}
+
+
+html.light .footer-logo {
+  color:
+    #0f172a;
+}
+
+
+html.light .footer-logo:hover {
+  color:
+    #0f172a;
+}
+
+
+html.light .footer-description {
+  color:
+    #334155;
+}
+
+
+html.light .footer-location {
+  color:
+    #64748b;
+}
+
+
+html.light .footer-nav-button {
+  color:
+    #334155;
+}
+
+
+html.light .footer-nav-button:hover {
+  color:
+    var(--color-blue);
+}
+
+
+html.light .footer-contact-link {
+  color:
+    #334155;
+}
+
+
+html.light .footer-contact-link:hover {
+  color:
+    var(--color-blue);
+}
+
+
+html.light .footer-social-text {
+  color:
+    #64748b;
+}
+
+
+html.light .footer-bottom p {
+  color:
+    #64748b;
+}
+
+
+html.light .footer-bottom p span {
+  color:
+    #334155;
+}
+
+
+html.light .footer-social-link {
+  color:
+    #334155;
+
+  background:
+    #ffffff;
+
+  box-shadow:
+    0 5px 18px
+    rgba(15, 23, 42, 0.05);
+}
+
+
+html.light .footer-back-top {
+  color:
+    #334155;
+
+  background:
+    #ffffff;
+
+  box-shadow:
+    0 5px 18px
+    rgba(15, 23, 42, 0.05);
+}
+
+
+/* =================================
+   TABLETTE
+================================= */
+
+@media (max-width: 1000px) {
 
   .footer-container {
     grid-template-columns:
+      1.5fr
       1fr
       1fr;
 
@@ -377,46 +893,51 @@
       40px;
   }
 
+
   .footer-brand {
     grid-column:
       1 / -1;
 
     max-width:
-      600px;
+      650px;
   }
-
 }
 
 
 /* =================================
-   MOBILE
+   PETITE TABLETTE
 ================================= */
 
-@media (max-width: 600px) {
+@media (max-width: 768px) {
 
   .footer {
     padding:
-      60px 20px
-      25px;
+      65px 20px 25px;
   }
+
 
   .footer-container {
     grid-template-columns:
-      1fr;
+      1fr 1fr;
 
     gap:
-      35px;
+      40px 30px;
   }
+
 
   .footer-brand {
     grid-column:
-      auto;
+      1 / -1;
   }
+
 
   .footer-bottom {
     margin-top:
       45px;
+  }
 
+
+  .footer-bottom-content {
     flex-direction:
       column;
 
@@ -427,22 +948,94 @@
       8px;
   }
 
+
+  .footer-credit {
+    text-align:
+      left;
+  }
 }
 
 
 /* =================================
-   VERY SMALL MOBILE
+   MOBILE
+================================= */
+
+@media (max-width: 550px) {
+
+  .footer {
+    padding:
+      60px 16px 22px;
+  }
+
+
+  .footer-container {
+    grid-template-columns:
+      1fr;
+
+    gap:
+      32px;
+  }
+
+
+  .footer-brand {
+    grid-column:
+      auto;
+  }
+
+
+  .footer-navigation,
+  .footer-contact,
+  .footer-social {
+    align-items:
+      flex-start;
+  }
+
+
+  .footer-bottom {
+    margin-top:
+      40px;
+
+    align-items:
+      flex-start;
+
+    gap:
+      15px;
+  }
+
+
+  .footer-bottom-content {
+    width:
+      100%;
+  }
+
+
+  .footer-back-top {
+    align-self:
+      flex-end;
+  }
+}
+
+
+/* =================================
+   TRÈS PETIT MOBILE
 ================================= */
 
 @media (max-width: 360px) {
 
   .footer {
     padding-left:
-      15px;
+      14px;
 
     padding-right:
-      15px;
+      14px;
   }
+
+
+  .footer-logo {
+    font-size:
+      1.1rem;
+  }
+
 
   .footer-social-link {
     width:
@@ -452,4 +1045,84 @@
       40px;
   }
 
+
+  .footer-back-top {
+    width:
+      40px;
+
+    height:
+      40px;
+  }
+}
+
+
+/* =================================
+   APPAREILS TACTILES
+================================= */
+
+@media (hover: none) {
+
+  .footer-logo:hover {
+    transform:
+      none;
+
+    opacity:
+      1;
+  }
+
+
+  .footer-nav-button:hover {
+    transform:
+      none;
+  }
+
+
+  .footer-social-link:hover {
+    transform:
+      none;
+  }
+
+
+  .footer-contact-button:hover {
+    transform:
+      none;
+
+    box-shadow:
+      none;
+  }
+
+
+  .footer-back-top:hover {
+    transform:
+      none;
+  }
+}
+
+
+/* =================================
+   RÉDUCTION DES ANIMATIONS
+================================= */
+
+@media (prefers-reduced-motion: reduce) {
+
+  .footer-logo,
+  .footer-nav-button,
+  .footer-contact-link,
+  .footer-contact-button,
+  .footer-contact-button span,
+  .footer-social-link,
+  .footer-back-top {
+    transition:
+      none;
+  }
+
+
+  .footer-logo:hover,
+  .footer-nav-button:hover,
+  .footer-social-link:hover,
+  .footer-contact-button:hover,
+  .footer-back-top:hover {
+    transform:
+      none;
+  }
 }

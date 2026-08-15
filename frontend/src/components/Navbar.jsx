@@ -1,23 +1,63 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { Link, useNavigate, useLocation } from "react-router-dom";
 import "./Navbar.css";
 
 function Navbar() {
   const [menuOpen, setMenuOpen] = useState(false);
+  const [lightMode, setLightMode] = useState(false);
 
   const navigate = useNavigate();
   const location = useLocation();
 
-  // Fermer le menu mobile
+  /* =================================
+     INITIALISATION DU THÈME
+  ================================= */
+
+  useEffect(() => {
+    const savedTheme = localStorage.getItem("portfolio-theme");
+
+    if (savedTheme === "light") {
+      document.documentElement.classList.add("light");
+      setLightMode(true);
+    } else {
+      document.documentElement.classList.remove("light");
+      setLightMode(false);
+    }
+  }, []);
+
+  /* =================================
+     CHANGER LE THÈME
+  ================================= */
+
+  const toggleTheme = () => {
+    const newLightMode = !lightMode;
+
+    setLightMode(newLightMode);
+
+    if (newLightMode) {
+      document.documentElement.classList.add("light");
+      localStorage.setItem("portfolio-theme", "light");
+    } else {
+      document.documentElement.classList.remove("light");
+      localStorage.setItem("portfolio-theme", "dark");
+    }
+  };
+
+  /* =================================
+     FERMER LE MENU MOBILE
+  ================================= */
+
   const closeMenu = () => {
     setMenuOpen(false);
   };
 
-  // Retour au début de la page d'accueil
+  /* =================================
+     LOGO
+  ================================= */
+
   const handleLogoClick = () => {
     closeMenu();
 
-    // Si on est déjà sur l'accueil
     if (location.pathname === "/") {
       window.scrollTo({
         top: 0,
@@ -26,11 +66,13 @@ function Navbar() {
     }
   };
 
-  // Navigation vers une section
+  /* =================================
+     NAVIGATION SECTIONS
+  ================================= */
+
   const handleSectionClick = (sectionId) => {
     closeMenu();
 
-    // Si on est déjà sur la page d'accueil
     if (location.pathname === "/") {
       const section = document.getElementById(sectionId);
 
@@ -44,18 +86,18 @@ function Navbar() {
       return;
     }
 
-    // Si on est sur une autre page,
-    // retour à l'accueil puis à la section
     navigate(`/#${sectionId}`);
   };
 
   return (
     <header className="navbar">
+
       <div className="container">
 
-        {/* =========================
+        {/* =================================
             LOGO
-        ========================= */}
+        ================================= */}
+
         <Link
           to="/"
           className="logo"
@@ -66,9 +108,10 @@ function Navbar() {
         </Link>
 
 
-        {/* =========================
+        {/* =================================
             NAVIGATION
-        ========================= */}
+        ================================= */}
+
         <nav
           id="main-navigation"
           className={menuOpen ? "active" : ""}
@@ -127,26 +170,57 @@ function Navbar() {
         </nav>
 
 
-        {/* =========================
-            MENU MOBILE
-        ========================= */}
-        <button
-          type="button"
-          className={`menu-toggle ${menuOpen ? "open" : ""}`}
-          onClick={() => setMenuOpen(!menuOpen)}
-          aria-label={
-            menuOpen
-              ? "Fermer le menu"
-              : "Ouvrir le menu"
-          }
-          aria-expanded={menuOpen}
-        >
-          <span></span>
-          <span></span>
-          <span></span>
-        </button>
+        {/* =================================
+            ACTIONS NAVBAR
+        ================================= */}
+
+        <div className="navbar-actions">
+
+          {/* THÈME */}
+
+          <button
+            type="button"
+            className="theme-toggle"
+            onClick={toggleTheme}
+            aria-label={
+              lightMode
+                ? "Activer le mode sombre"
+                : "Activer le mode clair"
+            }
+            title={
+              lightMode
+                ? "Mode sombre"
+                : "Mode clair"
+            }
+          >
+            <span className="theme-icon" aria-hidden="true">
+              {lightMode ? "☀" : "☾"}
+            </span>
+          </button>
+
+
+          {/* MENU MOBILE */}
+
+          <button
+            type="button"
+            className={`menu-toggle ${menuOpen ? "open" : ""}`}
+            onClick={() => setMenuOpen(!menuOpen)}
+            aria-label={
+              menuOpen
+                ? "Fermer le menu"
+                : "Ouvrir le menu"
+            }
+            aria-expanded={menuOpen}
+          >
+            <span></span>
+            <span></span>
+            <span></span>
+          </button>
+
+        </div>
 
       </div>
+
     </header>
   );
 }

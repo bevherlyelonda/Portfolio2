@@ -3,17 +3,78 @@
 ================================= */
 
 .about {
+  position: relative;
+
   width: 100%;
-  padding: 110px 25px 100px;
+
+  padding:
+    var(--section-padding-y)
+    25px;
+
   box-sizing: border-box;
 
-  background: linear-gradient(
-    180deg,
-    var(--color-black),
-    var(--surface)
-  );
+  background:
+    linear-gradient(
+      180deg,
+      var(--bg),
+      var(--surface)
+    );
 
-  scroll-margin-top: 75px;
+  scroll-margin-top: 90px;
+
+  overflow: hidden;
+}
+
+
+/* =================================
+   EFFETS D'AMBIANCE
+================================= */
+
+.about::before {
+  content: "";
+
+  position: absolute;
+
+  top: -220px;
+  right: -180px;
+
+  width: 500px;
+  height: 500px;
+
+  border-radius: 50%;
+
+  background:
+    radial-gradient(
+      circle,
+      rgba(0, 123, 255, 0.07),
+      transparent 70%
+    );
+
+  pointer-events: none;
+}
+
+
+.about::after {
+  content: "";
+
+  position: absolute;
+
+  bottom: -250px;
+  left: -200px;
+
+  width: 500px;
+  height: 500px;
+
+  border-radius: 50%;
+
+  background:
+    radial-gradient(
+      circle,
+      rgba(232, 62, 140, 0.045),
+      transparent 70%
+    );
+
+  pointer-events: none;
 }
 
 
@@ -22,59 +83,35 @@
 ================================= */
 
 .about-container {
+  position: relative;
+
+  z-index: 1;
+
   width: 100%;
-  max-width: 1100px;
-  margin: 0 auto;
+
+  max-width:
+    var(--container-width);
+
+  margin:
+    0 auto;
 }
 
 
 /* =================================
-   SECTION HEADING
+   EN-TÊTE
 ================================= */
 
 .about-heading {
-  margin-bottom: 55px;
-  text-align: center;
-}
+  margin-bottom:
+    55px;
 
-.section-label {
-  display: inline-block;
-  margin-bottom: 12px;
-
-  color: var(--color-blue);
-
-  font-size: 0.78rem;
-  font-weight: 700;
-  letter-spacing: 2px;
-}
-
-.section-heading h2 {
-  margin: 0;
-
-  color: var(--text-primary);
-
-  font-size: clamp(2rem, 4vw, 3rem);
-  line-height: 1.15;
-  letter-spacing: -0.5px;
-}
-
-.section-heading h2 span {
-  background: var(--gradient-primary);
-
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
-}
-
-.section-line {
-  width: 65px;
-  height: 3px;
-
-  margin: 18px auto 0;
-
-  border-radius: 10px;
-
-  background: var(--gradient-primary);
+  /*
+     Le titre est volontairement aligné
+     à gauche pour une hiérarchie plus
+     professionnelle et cohérente.
+  */
+  text-align:
+    left;
 }
 
 
@@ -83,72 +120,237 @@
 ================================= */
 
 .about-introduction {
+  position: relative;
+
   width: 100%;
-  max-width: 950px;
 
-  margin: 0 auto 55px;
-  padding: 42px;
+  max-width:
+    950px;
 
-  box-sizing: border-box;
+  margin:
+    0 auto 50px;
+
+  padding:
+    40px;
+
+  box-sizing:
+    border-box;
 
   background:
     linear-gradient(
-      135deg,
-      rgba(0, 123, 255, 0.07),
-      rgba(232, 62, 140, 0.04)
-    );
+      145deg,
+      rgba(0, 123, 255, 0.055),
+      rgba(232, 62, 140, 0.025)
+    ),
+    var(--surface);
 
-  border: 1px solid var(--border);
-  border-radius: 18px;
+  border:
+    1px solid
+    var(--border);
+
+  border-radius:
+    var(--radius-xl);
+
+  overflow:
+    hidden;
+
+  box-shadow:
+    var(--shadow);
 
   transition:
-    transform 0.3s ease,
-    border-color 0.3s ease,
-    box-shadow 0.3s ease;
+    transform 0.35s ease,
+    border-color 0.35s ease,
+    box-shadow 0.35s ease;
 }
 
+
 .about-introduction:hover {
-  transform: translateY(-3px);
+  transform:
+    translateY(-4px);
 
-  border-color: var(--border-blue);
+  border-color:
+    var(--border-blue);
 
-  box-shadow: var(--shadow-blue);
+  box-shadow:
+    var(--shadow-blue);
 }
 
 
 /* =================================
-   INTRODUCTION CONTENT
+   ACCENT VERTICAL
+================================= */
+
+.about-introduction-accent {
+  position: absolute;
+
+  top: 0;
+  left: 0;
+
+  width: 3px;
+  height: 100%;
+
+  background:
+    var(--gradient-primary);
+
+  transform:
+    scaleY(0.35);
+
+  transform-origin:
+    center;
+
+  transition:
+    transform 0.4s ease;
+}
+
+
+.about-introduction:hover
+.about-introduction-accent {
+  transform:
+    scaleY(1);
+}
+
+
+/* =================================
+   CONTENT
 ================================= */
 
 .about-introduction-content {
   width: 100%;
+
+  padding-left:
+    8px;
 }
 
-.about-introduction-content h3 {
-  margin: 0 0 10px;
 
-  color: var(--text-primary);
+/* =================================
+   RÔLES
+================================= */
 
-  font-size: 1.45rem;
-  font-weight: 600;
-  line-height: 1.4;
+.about-roles {
+  display:
+    flex;
+
+  flex-direction:
+    column;
+
+  gap:
+    15px;
 }
 
-.about-introduction-content h3 span {
-  color: var(--color-blue);
+
+/* =================================
+   ROLE
+================================= */
+
+.about-role {
+  display:
+    flex;
+
+  align-items:
+    baseline;
+
+  gap:
+    16px;
 }
 
-.about-introduction-content h3:last-of-type {
-  margin-bottom: 28px;
+
+/* =================================
+   NUMÉRO
+================================= */
+
+.about-role-number {
+  flex-shrink:
+    0;
+
+  color:
+    var(--color-blue-light);
+
+  font-family:
+    var(--mono);
+
+  font-size:
+    0.68rem;
+
+  font-weight:
+    700;
+
+  letter-spacing:
+    1px;
+
+  opacity:
+    0.8;
 }
 
-.about-introduction-content p {
-  margin: 0;
 
-  color: var(--text);
+/* =================================
+   ROLE TITLE
+================================= */
 
-  font-size: 1rem;
-  line-height: 1.9;
+.about-role h3 {
+  margin:
+    0;
+
+  color:
+    var(--text-primary);
+
+  font-size:
+    1.35rem;
+
+  font-weight:
+    650;
+
+  line-height:
+    1.45;
+}
+
+
+.about-role h3 span {
+  color:
+    var(--color-blue-light);
+
+  font-weight:
+    600;
+}
+
+
+/* =================================
+   DIVIDER
+================================= */
+
+.about-introduction-divider {
+  width:
+    100%;
+
+  height:
+    1px;
+
+  margin:
+    28px 0;
+
+  background:
+    var(--border);
+}
+
+
+/* =================================
+   BIOGRAPHIE
+================================= */
+
+.about-biography {
+  max-width:
+    850px;
+
+  margin:
+    0;
+
+  color:
+    var(--text-secondary);
+
+  font-size:
+    0.98rem;
+
+  line-height:
+    1.9;
 }
 
 
@@ -157,43 +359,117 @@
 ================================= */
 
 .about-cv {
-  width: 100%;
-  max-width: 950px;
+  position:
+    relative;
 
-  margin: 0 auto;
+  width:
+    100%;
 
-  padding: 32px 36px;
+  max-width:
+    950px;
 
-  box-sizing: border-box;
+  margin:
+    0 auto;
 
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
+  padding:
+    28px 30px;
 
-  gap: 30px;
+  box-sizing:
+    border-box;
+
+  display:
+    flex;
+
+  align-items:
+    center;
+
+  gap:
+    22px;
 
   background:
     linear-gradient(
-      135deg,
-      rgba(0, 123, 255, 0.08),
-      rgba(232, 62, 140, 0.06)
-    );
+      145deg,
+      rgba(0, 123, 255, 0.065),
+      rgba(232, 62, 140, 0.025)
+    ),
+    var(--surface);
 
-  border: 1px solid var(--border);
-  border-radius: 16px;
+  border:
+    1px solid
+    var(--border);
+
+  border-radius:
+    var(--radius-lg);
+
+  box-shadow:
+    var(--shadow);
 
   transition:
-    transform 0.3s ease,
-    border-color 0.3s ease,
-    box-shadow 0.3s ease;
+    transform 0.35s ease,
+    border-color 0.35s ease,
+    box-shadow 0.35s ease;
 }
 
+
 .about-cv:hover {
-  transform: translateY(-3px);
+  transform:
+    translateY(-4px);
 
-  border-color: var(--border-blue);
+  border-color:
+    var(--border-blue);
 
-  box-shadow: var(--shadow-blue);
+  box-shadow:
+    var(--shadow-blue);
+}
+
+
+/* =================================
+   CV ICON
+================================= */
+
+.about-cv-icon {
+  width:
+    48px;
+
+  height:
+    48px;
+
+  flex-shrink:
+    0;
+
+  display:
+    flex;
+
+  align-items:
+    center;
+
+  justify-content:
+    center;
+
+  border:
+    1px solid
+    var(--border-blue);
+
+  border-radius:
+    var(--radius-md);
+
+  background:
+    var(--surface-blue);
+
+  color:
+    var(--color-blue-light);
+
+  font-family:
+    var(--mono);
+
+  font-size:
+    0.72rem;
+
+  font-weight:
+    700;
+
+  letter-spacing:
+    0.5px;
 }
 
 
@@ -202,40 +478,86 @@
 ================================= */
 
 .about-cv-content {
-  min-width: 0;
+  min-width:
+    0;
+
+  flex:
+    1;
 }
+
+
+/* =================================
+   CV LABEL
+================================= */
 
 .about-cv-label {
-  display: block;
+  display:
+    block;
 
-  margin-bottom: 7px;
+  margin-bottom:
+    5px;
 
-  color: var(--color-pink);
+  color:
+    var(--color-pink);
 
-  font-size: 0.7rem;
-  font-weight: 700;
-  letter-spacing: 2px;
+  font-family:
+    var(--mono);
+
+  font-size:
+    0.65rem;
+
+  font-weight:
+    700;
+
+  letter-spacing:
+    1.7px;
+
+  text-transform:
+    uppercase;
 }
+
+
+/* =================================
+   CV TITLE
+================================= */
 
 .about-cv-content h3 {
-  margin: 0 0 8px;
+  margin:
+    0 0 6px;
 
-  color: var(--text-primary);
+  color:
+    var(--text-primary);
 
-  font-size: 1.25rem;
-  font-weight: 600;
-  line-height: 1.4;
+  font-size:
+    1.2rem;
+
+  font-weight:
+    650;
+
+  line-height:
+    1.4;
 }
 
+
+/* =================================
+   CV DESCRIPTION
+================================= */
+
 .about-cv-content p {
-  max-width: 620px;
+  max-width:
+    650px;
 
-  margin: 0;
+  margin:
+    0;
 
-  color: var(--text-secondary);
+  color:
+    var(--text-secondary);
 
-  font-size: 0.9rem;
-  line-height: 1.7;
+  font-size:
+    0.84rem;
+
+  line-height:
+    1.7;
 }
 
 
@@ -244,105 +566,401 @@
 ================================= */
 
 .about-cv-button {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
+  display:
+    inline-flex;
 
-  gap: 10px;
+  align-items:
+    center;
 
-  flex-shrink: 0;
+  justify-content:
+    center;
 
-  padding: 12px 22px;
+  gap:
+    9px;
 
-  color: var(--color-blue);
+  flex-shrink:
+    0;
 
-  background: transparent;
+  min-height:
+    43px;
 
-  border: 1px solid var(--color-blue);
-  border-radius: 8px;
+  padding:
+    10px 17px;
 
-  font-size: 0.9rem;
-  font-weight: 600;
+  box-sizing:
+    border-box;
 
-  text-decoration: none;
+  color:
+    var(--color-blue-light);
+
+  background:
+    var(--surface-blue);
+
+  border:
+    1px solid
+    var(--border-blue);
+
+  border-radius:
+    var(--radius-md);
+
+  font-size:
+    0.8rem;
+
+  font-weight:
+    600;
+
+  line-height:
+    1;
+
+  text-decoration:
+    none;
+
+  white-space:
+    nowrap;
 
   transition:
     color 0.3s ease,
     background 0.3s ease,
+    border-color 0.3s ease,
     transform 0.3s ease,
     box-shadow 0.3s ease;
 }
 
-.about-cv-button span {
-  font-size: 1.1rem;
-
-  transition: transform 0.3s ease;
-}
 
 .about-cv-button:hover {
-  color: #ffffff;
+  color:
+    #ffffff;
 
-  background: var(--color-blue);
+  background:
+    var(--color-blue);
 
-  transform: translateY(-2px);
+  border-color:
+    var(--color-blue);
 
-  box-shadow: var(--shadow-blue);
-}
+  transform:
+    translateY(-2px);
 
-.about-cv-button:hover span {
-  transform: translate(2px, -2px);
-}
-
-.about-cv-button:focus-visible {
-  outline: 2px solid var(--color-blue);
-  outline-offset: 4px;
+  box-shadow:
+    var(--shadow-blue);
 }
 
 
 /* =================================
-   LOADING / ERROR
+   CV ARROW
+================================= */
+
+.about-cv-arrow {
+  font-size:
+    1rem;
+
+  line-height:
+    1;
+
+  transition:
+    transform 0.3s ease;
+}
+
+
+.about-cv-button:hover
+.about-cv-arrow {
+  transform:
+    translate(2px, -2px);
+}
+
+
+/* =================================
+   FOCUS ACCESSIBILITY
+================================= */
+
+.about-cv-button:focus-visible {
+  outline:
+    2px solid
+    var(--color-blue-light);
+
+  outline-offset:
+    4px;
+}
+
+
+/* =================================
+   LOADING / ERROR STATE
 ================================= */
 
 .about-state {
-  min-height: 50vh;
+  min-height:
+    50vh;
 
-  display: flex;
-  align-items: center;
-  justify-content: center;
+  display:
+    flex;
 
-  text-align: center;
+  align-items:
+    center;
 
-  color: var(--text-secondary);
+  justify-content:
+    center;
+
+  text-align:
+    center;
+}
+
+
+.about-state-content {
+  display:
+    flex;
+
+  flex-direction:
+    column;
+
+  align-items:
+    center;
+
+  gap:
+    12px;
+
+  color:
+    var(--text-secondary);
+}
+
+
+.about-state-content p {
+  margin:
+    0;
+
+  font-size:
+    0.9rem;
+}
+
+
+.about-state-content small {
+  max-width:
+    500px;
+
+  color:
+    var(--text-muted);
+
+  font-size:
+    0.75rem;
+
+  line-height:
+    1.6;
 }
 
 
 /* =================================
-   TABLET
+   LOADER
+================================= */
+
+.about-state-loader {
+  width:
+    30px;
+
+  height:
+    30px;
+
+  border:
+    2px solid
+    var(--border);
+
+  border-top-color:
+    var(--color-blue);
+
+  border-radius:
+    50%;
+
+  animation:
+    aboutLoader 0.8s linear infinite;
+}
+
+
+@keyframes aboutLoader {
+
+  to {
+    transform:
+      rotate(360deg);
+  }
+
+}
+
+
+/* =================================
+   STATE ICON
+================================= */
+
+.about-state-icon {
+  width:
+    38px;
+
+  height:
+    38px;
+
+  display:
+    flex;
+
+  align-items:
+    center;
+
+  justify-content:
+    center;
+
+  border:
+    1px solid
+    var(--border-blue);
+
+  border-radius:
+    50%;
+
+  background:
+    var(--surface-blue);
+
+  color:
+    var(--color-blue-light);
+
+  font-family:
+    var(--mono);
+
+  font-weight:
+    700;
+}
+
+
+/* =================================
+   MODE CLAIR
+================================= */
+
+html.light .about {
+  color:
+    #111827;
+}
+
+
+html.light .about-role h3,
+html.light .about-cv-content h3 {
+  color:
+    #111827;
+}
+
+
+html.light .about-biography,
+html.light .about-cv-content p {
+  color:
+    #374151;
+}
+
+
+html.light .about-introduction,
+html.light .about-cv {
+  box-shadow:
+    0 10px 30px
+    rgba(15, 23, 42, 0.06);
+}
+
+
+html.light .about-introduction:hover,
+html.light .about-cv:hover {
+  box-shadow:
+    0 15px 35px
+    rgba(0, 123, 255, 0.1);
+}
+
+
+/* =================================
+   MODE CLAIR — ÉLÉMENTS SECONDAIRES
+================================= */
+
+html.light .about-role-number {
+  color:
+    #0369a1;
+
+  opacity:
+    1;
+}
+
+
+html.light .about-role h3 span {
+  color:
+    #0369a1;
+}
+
+
+html.light .about-cv-label {
+  color:
+    #be185d;
+}
+
+
+html.light .about-state-content {
+  color:
+    #374151;
+}
+
+
+html.light .about-state-content small {
+  color:
+    #6b7280;
+}
+
+
+/* =================================
+   MODE CLAIR — BOUTON CV
+================================= */
+
+html.light .about-cv-button {
+  color:
+    #0369a1;
+
+  background:
+    rgba(0, 123, 255, 0.06);
+
+  border-color:
+    rgba(3, 105, 161, 0.35);
+}
+
+
+html.light .about-cv-button:hover {
+  color:
+    #ffffff;
+
+  background:
+    #007bff;
+
+  border-color:
+    #007bff;
+}
+
+
+/* =================================
+   TABLETTE
 ================================= */
 
 @media (max-width: 800px) {
+
   .about {
-    padding: 90px 20px 80px;
+    padding:
+      var(--section-padding-y-mobile)
+      20px;
   }
+
 
   .about-heading {
-    margin-bottom: 45px;
+    margin-bottom:
+      45px;
+
+    text-align:
+      left;
   }
+
 
   .about-introduction {
-    padding: 32px;
+    padding:
+      32px;
   }
+
 
   .about-cv {
-    align-items: flex-start;
-    flex-direction: column;
-
-    gap: 24px;
+    padding:
+      25px;
   }
 
-  .about-cv-button {
-    width: auto;
-  }
 }
 
 
@@ -351,66 +969,135 @@
 ================================= */
 
 @media (max-width: 600px) {
-  .about {
-    padding: 75px 18px 65px;
 
-    scroll-margin-top: 65px;
+  .about {
+    padding:
+      75px 18px 65px;
+
+    scroll-margin-top:
+      75px;
   }
+
 
   .about-heading {
-    margin-bottom: 38px;
+    margin-bottom:
+      38px;
+
+    text-align:
+      left;
   }
 
-  .section-label {
-    font-size: 0.7rem;
-    letter-spacing: 1.7px;
-  }
-
-  .section-heading h2 {
-    font-size: 2rem;
-  }
 
   .about-introduction {
-    padding: 25px;
+    margin-bottom:
+      35px;
 
-    margin-bottom: 35px;
+    padding:
+      25px;
 
-    border-radius: 14px;
+    border-radius:
+      var(--radius-lg);
   }
 
-  .about-introduction-content h3 {
-    font-size: 1.2rem;
-    line-height: 1.45;
+
+  .about-introduction-content {
+    padding-left:
+      5px;
   }
 
-  .about-introduction-content h3:last-of-type {
-    margin-bottom: 24px;
+
+  .about-role {
+    align-items:
+      flex-start;
+
+    gap:
+      11px;
   }
 
-  .about-introduction-content p {
-    font-size: 0.94rem;
-    line-height: 1.8;
+
+  .about-role-number {
+    margin-top:
+      4px;
+
+    font-size:
+      0.61rem;
   }
+
+
+  .about-role h3 {
+    font-size:
+      1.12rem;
+
+    line-height:
+      1.5;
+  }
+
+
+  .about-introduction-divider {
+    margin:
+      24px 0;
+  }
+
+
+  .about-biography {
+    font-size:
+      0.91rem;
+
+    line-height:
+      1.8;
+  }
+
 
   .about-cv {
-    padding: 25px;
+    align-items:
+      flex-start;
 
-    border-radius: 14px;
+    flex-wrap:
+      wrap;
 
-    gap: 22px;
+    gap:
+      18px;
+
+    padding:
+      24px;
+
+    border-radius:
+      var(--radius-lg);
   }
+
+
+  .about-cv-icon {
+    width:
+      44px;
+
+    height:
+      44px;
+  }
+
+
+  .about-cv-content {
+    flex:
+      1 1 calc(100% - 65px);
+  }
+
 
   .about-cv-content h3 {
-    font-size: 1.15rem;
+    font-size:
+      1.1rem;
   }
+
 
   .about-cv-content p {
-    font-size: 0.9rem;
+    font-size:
+      0.84rem;
   }
 
+
   .about-cv-button {
-    width: 100%;
+    width:
+      100%;
   }
+
 }
 
 
@@ -419,22 +1106,83 @@
 ================================= */
 
 @media (max-width: 360px) {
+
   .about {
-    padding-left: 15px;
-    padding-right: 15px;
+    padding-left:
+      15px;
+
+    padding-right:
+      15px;
   }
+
 
   .about-introduction {
-    padding: 20px;
+    padding:
+      20px;
   }
 
-  .about-introduction-content h3 {
-    font-size: 1.1rem;
+
+  .about-role h3 {
+    font-size:
+      1.05rem;
   }
+
+
+  .about-biography {
+    font-size:
+      0.88rem;
+  }
+
 
   .about-cv {
-    padding: 20px;
+    padding:
+      20px;
   }
+
+}
+
+
+/* =================================
+   APPAREILS TACTILES
+================================= */
+
+@media (hover: none) {
+
+  .about-introduction:hover,
+  .about-cv:hover {
+    transform:
+      none;
+
+    border-color:
+      var(--border);
+
+    box-shadow:
+      var(--shadow);
+  }
+
+
+  .about-introduction:hover
+  .about-introduction-accent {
+    transform:
+      scaleY(0.35);
+  }
+
+
+  .about-cv-button:hover {
+    transform:
+      none;
+
+    box-shadow:
+      none;
+  }
+
+
+  .about-cv-button:hover
+  .about-cv-arrow {
+    transform:
+      none;
+  }
+
 }
 
 
@@ -443,16 +1191,28 @@
 ================================= */
 
 @media (prefers-reduced-motion: reduce) {
+
   .about-introduction,
+  .about-introduction-accent,
   .about-cv,
   .about-cv-button,
-  .about-cv-button span {
-    transition: none;
+  .about-cv-arrow {
+    transition:
+      none;
   }
+
+
+  .about-state-loader {
+    animation:
+      none;
+  }
+
 
   .about-introduction:hover,
   .about-cv:hover,
   .about-cv-button:hover {
-    transform: none;
+    transform:
+      none;
   }
+
 }

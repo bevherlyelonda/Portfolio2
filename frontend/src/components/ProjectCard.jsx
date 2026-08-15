@@ -2,17 +2,39 @@ import { Link } from "react-router-dom";
 import "./ProjectCard.css";
 
 function ProjectCard({ project }) {
+  if (!project) {
+    return null;
+  }
+
   return (
     <article className="project-card">
+
+      {/* =================================
+          DÉCORATION
+      ================================= */}
+
+      <div
+        className="project-card-glow"
+        aria-hidden="true"
+      />
+
 
       {/* =================================
           CATÉGORIE
       ================================= */}
 
-      <div className="project-card-category">
-        <span className="project-card-category-dot"></span>
-        {project.category}
-      </div>
+      {project.category && (
+        <div className="project-card-category">
+          <span
+            className="project-card-category-dot"
+            aria-hidden="true"
+          />
+
+          <span>
+            {project.category}
+          </span>
+        </div>
+      )}
 
 
       {/* =================================
@@ -20,7 +42,7 @@ function ProjectCard({ project }) {
       ================================= */}
 
       <h3 className="project-card-title">
-        {project.title}
+        {project.title || "Projet sans titre"}
       </h3>
 
 
@@ -28,7 +50,10 @@ function ProjectCard({ project }) {
           SÉPARATEUR
       ================================= */}
 
-      <div className="project-card-divider"></div>
+      <div
+        className="project-card-divider"
+        aria-hidden="true"
+      />
 
 
       {/* =================================
@@ -36,7 +61,7 @@ function ProjectCard({ project }) {
       ================================= */}
 
       <p className="project-card-description">
-        {project.description}
+        {project.description || "Aucune description disponible."}
       </p>
 
 
@@ -46,16 +71,26 @@ function ProjectCard({ project }) {
 
       <div className="project-card-footer">
 
-        <Link
-          to={`/projects/${project.slug}`}
-          className="project-card-button"
-        >
-          <span>Voir le projet</span>
+        {project.slug ? (
+          <Link
+            to={`/projects/${project.slug}`}
+            className="project-card-button"
+            aria-label={`Voir le projet ${project.title || ""}`}
+          >
+            <span>Voir le projet</span>
 
-          <span className="project-card-arrow">
-            →
+            <span
+              className="project-card-arrow"
+              aria-hidden="true"
+            >
+              →
+            </span>
+          </Link>
+        ) : (
+          <span className="project-card-unavailable">
+            Projet indisponible
           </span>
-        </Link>
+        )}
 
       </div>
 

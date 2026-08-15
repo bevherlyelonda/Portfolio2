@@ -1,5 +1,6 @@
 /* =================================
    ALL PROJECTS PAGE
+   THÈME SOMBRE / CLAIR
 ================================= */
 
 .all-projects {
@@ -10,10 +11,96 @@
   background:
     linear-gradient(
       180deg,
-      var(--color-black) 0%,
-      var(--surface) 45%,
-      var(--color-black) 100%
+      var(--page-background),
+      var(--surface)
     );
+
+  color:
+    var(--text-primary);
+
+  transition:
+    background 0.35s ease,
+    color 0.35s ease;
+}
+
+
+/* =================================
+   MODE SOMBRE
+================================= */
+
+:root[data-theme="dark"] {
+
+  --projects-page-background:
+    #0d1117;
+
+  --projects-page-surface:
+    #111820;
+
+  --projects-page-text:
+    #f0f6fc;
+
+  --projects-page-secondary:
+    #8b949e;
+
+  --projects-page-border:
+    #263241;
+}
+
+
+/* =================================
+   MODE CLAIR
+================================= */
+
+:root[data-theme="light"] {
+
+  --projects-page-background:
+    #f4f7fb;
+
+  --projects-page-surface:
+    #ffffff;
+
+  --projects-page-text:
+    #172033;
+
+  --projects-page-secondary:
+    #647084;
+
+  --projects-page-border:
+    #d9e1ea;
+}
+
+
+/* =================================
+   APPLICATION DU THÈME À LA PAGE
+================================= */
+
+:root[data-theme="dark"] .all-projects {
+
+  background:
+    linear-gradient(
+      180deg,
+      #0d1117 0%,
+      #111820 50%,
+      #0d1117 100%
+    );
+
+  color:
+    #f0f6fc;
+}
+
+
+:root[data-theme="light"] .all-projects {
+
+  background:
+    linear-gradient(
+      180deg,
+      #f4f7fb 0%,
+      #ffffff 50%,
+      #f4f7fb 100%
+    );
+
+  color:
+    #172033;
 }
 
 
@@ -40,11 +127,73 @@
 ================================= */
 
 .all-projects-hero {
+
+  position: relative;
+
   padding:
     100px 0
     75px;
 
   text-align: center;
+
+  background:
+    linear-gradient(
+      180deg,
+      transparent,
+      rgba(0, 123, 255, 0.018)
+    );
+
+  transition:
+    background 0.35s ease;
+}
+
+
+/* =================================
+   HERO — MODE CLAIR
+================================= */
+
+:root[data-theme="light"] .all-projects-hero {
+
+  background:
+    linear-gradient(
+      180deg,
+      transparent,
+      rgba(0, 123, 255, 0.025)
+    );
+}
+
+
+/* =================================
+   LABEL
+================================= */
+
+.all-projects-hero .section-label {
+
+  display: inline-block;
+
+  margin-bottom:
+    14px;
+
+  color:
+    var(--color-orange);
+
+  font-family:
+    var(--mono);
+
+  font-size:
+    0.72rem;
+
+  font-weight:
+    700;
+
+  letter-spacing:
+    2px;
+
+  line-height:
+    1.3;
+
+  transition:
+    color 0.35s ease;
 }
 
 
@@ -53,10 +202,12 @@
 ================================= */
 
 .all-projects-hero h1 {
+
   margin:
     0;
 
-  color: var(--text-primary);
+  color:
+    var(--projects-text-primary);
 
   font-size:
     clamp(
@@ -65,9 +216,17 @@
       4rem
     );
 
-  line-height: 1.15;
+  font-weight:
+    700;
 
-  letter-spacing: -1.5px;
+  line-height:
+    1.15;
+
+  letter-spacing:
+    -1.5px;
+
+  transition:
+    color 0.35s ease;
 }
 
 
@@ -76,34 +235,67 @@
 ================================= */
 
 .all-projects-hero h1 span {
+
   background:
     var(--gradient-primary);
 
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
+  -webkit-background-clip:
+    text;
 
-  background-clip: text;
+  -webkit-text-fill-color:
+    transparent;
+
+  background-clip:
+    text;
 }
 
 
 /* =================================
-   INTRO
+   SECTION LINE
+================================= */
+
+.all-projects-hero .section-line {
+
+  width:
+    65px;
+
+  height:
+    3px;
+
+  margin:
+    20px auto 22px;
+
+  border-radius:
+    10px;
+
+  background:
+    var(--gradient-primary);
+}
+
+
+/* =================================
+   INTRODUCTION
 ================================= */
 
 .all-projects-hero p {
-  max-width: 700px;
+
+  max-width:
+    700px;
 
   margin:
     25px auto 0;
 
   color:
-    var(--text-secondary);
+    var(--projects-text-secondary);
 
   font-size:
     1rem;
 
   line-height:
     1.8;
+
+  transition:
+    color 0.35s ease;
 }
 
 
@@ -112,9 +304,16 @@
 ================================= */
 
 .all-projects-list {
+
   padding:
     20px 0
     110px;
+
+  background:
+    transparent;
+
+  transition:
+    background 0.35s ease;
 }
 
 
@@ -123,7 +322,9 @@
 ================================= */
 
 .all-projects-grid {
-  display: grid;
+
+  display:
+    grid;
 
   grid-template-columns:
     repeat(
@@ -131,31 +332,71 @@
       minmax(0, 1fr)
     );
 
-  gap: 25px;
+  gap:
+    25px;
 }
 
 
 /* =================================
-   EMPTY
+   EMPTY STATE
 ================================= */
 
 .all-projects-empty {
+
+  width:
+    100%;
+
   padding:
     50px 30px;
 
-  text-align: center;
+  box-sizing:
+    border-box;
+
+  text-align:
+    center;
 
   background:
-    var(--surface);
+    linear-gradient(
+      145deg,
+      rgba(0, 123, 255, 0.035),
+      rgba(232, 62, 140, 0.015)
+    ),
+    var(--projects-page-surface);
 
   border:
-    1px solid var(--border);
+    1px solid
+    var(--projects-page-border);
 
   border-radius:
     16px;
 
   color:
-    var(--text-secondary);
+    var(--projects-text-secondary);
+
+  box-shadow:
+    var(--projects-shadow);
+
+  transition:
+    background 0.35s ease,
+    border-color 0.35s ease,
+    color 0.35s ease,
+    box-shadow 0.35s ease;
+}
+
+
+.all-projects-empty p {
+
+  margin:
+    0;
+
+  color:
+    inherit;
+
+  font-size:
+    0.9rem;
+
+  line-height:
+    1.7;
 }
 
 
@@ -164,16 +405,65 @@
 ================================= */
 
 .all-projects-state {
-  min-height: 100vh;
 
-  display: flex;
+  min-height:
+    100vh;
 
-  align-items: center;
+  display:
+    flex;
 
-  justify-content: center;
+  align-items:
+    center;
+
+  justify-content:
+    center;
+
+  padding:
+    100px 25px;
+
+  box-sizing:
+    border-box;
+
+  background:
+    linear-gradient(
+      180deg,
+      var(--projects-page-bg),
+      var(--projects-page-surface)
+    );
 
   color:
-    var(--text-secondary);
+    var(--projects-text-secondary);
+
+  text-align:
+    center;
+
+  transition:
+    background 0.35s ease,
+    color 0.35s ease;
+}
+
+
+.all-projects-state p {
+
+  margin:
+    0;
+
+  font-size:
+    0.9rem;
+
+  line-height:
+    1.7;
+}
+
+
+/* =================================
+   ERROR
+================================= */
+
+.all-projects-state p::first-letter {
+
+  color:
+    var(--color-blue);
 }
 
 
@@ -184,11 +474,14 @@
 @media (max-width: 850px) {
 
   .all-projects {
-    padding-top: 65px;
+
+    padding-top:
+      65px;
   }
 
 
   .all-projects-hero {
+
     padding:
       80px 0
       60px;
@@ -196,6 +489,7 @@
 
 
   .all-projects-grid {
+
     grid-template-columns:
       1fr;
 
@@ -208,6 +502,7 @@
 
 
   .all-projects-list {
+
     padding-bottom:
       80px;
   }
@@ -222,19 +517,32 @@
 @media (max-width: 600px) {
 
   .all-projects-container {
+
     padding:
       0 20px;
   }
 
 
   .all-projects-hero {
+
     padding:
       65px 0
       45px;
   }
 
 
+  .all-projects-hero .section-label {
+
+    font-size:
+      0.67rem;
+
+    letter-spacing:
+      1.7px;
+  }
+
+
   .all-projects-hero h1 {
+
     font-size:
       2.25rem;
 
@@ -244,15 +552,33 @@
 
 
   .all-projects-hero p {
+
+    margin-top:
+      20px;
+
     font-size:
       0.92rem;
+
+    line-height:
+      1.75;
   }
 
 
   .all-projects-list {
+
     padding:
       10px 0
       65px;
+  }
+
+
+  .all-projects-empty {
+
+    padding:
+      40px 25px;
+
+    border-radius:
+      14px;
   }
 
 }
@@ -265,14 +591,52 @@
 @media (max-width: 360px) {
 
   .all-projects-container {
+
     padding:
       0 15px;
   }
 
 
+  .all-projects-hero {
+
+    padding-top:
+      55px;
+  }
+
+
   .all-projects-hero h1 {
+
     font-size:
       2rem;
+  }
+
+
+  .all-projects-hero p {
+
+    font-size:
+      0.88rem;
+  }
+
+}
+
+
+/* =================================
+   ACCESSIBILITY
+================================= */
+
+@media (prefers-reduced-motion: reduce) {
+
+  .all-projects,
+  .all-projects-hero,
+  .all-projects-hero .section-label,
+  .all-projects-hero h1,
+  .all-projects-hero p,
+  .all-projects-list,
+  .all-projects-empty,
+  .all-projects-state {
+
+    transition:
+      none;
   }
 
 }

@@ -22,6 +22,10 @@ function Education() {
     loadEducation();
   }, []);
 
+  /* =================================
+     LOADING
+  ================================= */
+
   if (loading) {
     return (
       <section className="education education-state">
@@ -29,6 +33,10 @@ function Education() {
       </section>
     );
   }
+
+  /* =================================
+     ERROR
+  ================================= */
 
   if (error) {
     return (
@@ -86,14 +94,18 @@ function Education() {
                 }`}
               >
 
-                {/* POINT DE LA TIMELINE */}
+                {/* =================================
+                    TIMELINE DOT
+                ================================= */}
 
                 <div className="education-dot">
                   <span></span>
                 </div>
 
 
-                {/* DATE */}
+                {/* =================================
+                    DATE
+                ================================= */}
 
                 <div className="education-date">
 
@@ -118,7 +130,9 @@ function Education() {
                 </div>
 
 
-                {/* CARD */}
+                {/* =================================
+                    CARD
+                ================================= */}
 
                 <div className="education-card">
 

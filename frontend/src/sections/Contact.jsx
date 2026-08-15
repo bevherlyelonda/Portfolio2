@@ -162,7 +162,7 @@ function Contact() {
         <div className="contact-content">
 
           {/* =================================
-              CONTACT LINKS
+              CONTACT INFORMATION
           ================================= */}
 
           <div className="contact-information">

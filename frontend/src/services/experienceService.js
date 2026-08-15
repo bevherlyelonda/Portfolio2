@@ -1,4 +1,4 @@
-const API_URL = `${import.meta.env.VITE_API_URL}/api/education/`;
+const API_URL = `${import.meta.env.VITE_API_URL}/api/experiences/`;
 
 export async function getExperiences() {
   const response = await fetch(API_URL);

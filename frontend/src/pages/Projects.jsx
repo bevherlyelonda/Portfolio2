@@ -32,7 +32,9 @@ function Projects() {
   if (loading) {
     return (
       <main className="all-projects all-projects-state">
-        <p>Chargement des projets...</p>
+        <p className="all-projects-state-text">
+          Chargement des projets...
+        </p>
       </main>
     );
   }
@@ -40,7 +42,9 @@ function Projects() {
   if (error) {
     return (
       <main className="all-projects all-projects-state">
-        <p>Erreur : {error}</p>
+        <p className="all-projects-state-text">
+          Erreur : {error}
+        </p>
       </main>
     );
   }
@@ -56,17 +60,17 @@ function Projects() {
 
         <div className="all-projects-container">
 
-          <span className="section-label">
+          <span className="all-projects-section-label">
             PORTFOLIO
           </span>
 
-          <h1>
+          <h1 className="all-projects-title">
             Tous mes <span>projets</span>
           </h1>
 
-          <div className="section-line"></div>
+          <div className="all-projects-section-line"></div>
 
-          <p>
+          <p className="all-projects-description">
             Découvrez l'ensemble de mes réalisations en
             administration de bases de données, développement,
             Data Science et Intelligence Artificielle.

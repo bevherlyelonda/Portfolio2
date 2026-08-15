@@ -5,14 +5,19 @@
 .experience {
   position: relative;
 
-  padding: 110px 25px 110px;
+  padding:
+    110px 25px
+    110px;
 
   background:
-    linear-gradient(
-      180deg,
-      var(--surface),
-      var(--color-black)
-    );
+    var(--surface);
+
+  color:
+    var(--text-primary);
+
+  transition:
+    background-color 0.3s ease,
+    color 0.3s ease;
 }
 
 
@@ -41,13 +46,17 @@
 .experience-intro {
   max-width: 700px;
 
-  margin: 25px auto 0;
+  margin:
+    25px auto 0;
 
-  color: var(--text-secondary);
+  color:
+    var(--text-secondary);
 
-  font-size: 0.98rem;
+  font-size:
+    0.98rem;
 
-  line-height: 1.8;
+  line-height:
+    1.8;
 }
 
 
@@ -88,7 +97,11 @@
       var(--color-orange)
     );
 
-  opacity: 0.55;
+  opacity:
+    0.45;
+
+  transition:
+    opacity 0.3s ease;
 }
 
 
@@ -101,7 +114,8 @@
 
   display: grid;
 
-  grid-template-columns: 45px 1fr;
+  grid-template-columns:
+    45px 1fr;
 
   gap: 30px;
 
@@ -141,21 +155,26 @@
   top: 24px;
 
   width: 17px;
-
   height: 17px;
 
   border-radius: 50%;
 
-  background: var(--color-black);
+  background:
+    var(--surface);
 
-  border: 2px solid var(--color-blue);
+  border:
+    2px solid
+    var(--color-blue);
 
   box-shadow:
-    0 0 0 5px rgba(0, 123, 255, 0.08),
-    0 0 18px rgba(0, 123, 255, 0.35);
+    0 0 0 5px
+    rgba(0, 123, 255, 0.08),
+
+    0 0 18px
+    rgba(0, 123, 255, 0.20);
 
   transition:
-    background 0.3s ease,
+    background-color 0.3s ease,
     border-color 0.3s ease,
     box-shadow 0.3s ease,
     transform 0.3s ease;
@@ -168,32 +187,42 @@
   top: 30px;
 
   width: 5px;
-
   height: 5px;
 
   border-radius: 50%;
 
-  background: var(--color-blue);
+  background:
+    var(--color-blue);
+
+  transition:
+    background-color 0.3s ease;
 }
 
 
 .experience-item:hover
 .experience-marker::before {
-  background: var(--color-blue);
+  background:
+    var(--color-blue);
 
-  border-color: var(--color-blue);
+  border-color:
+    var(--color-blue);
 
   box-shadow:
-    0 0 0 6px rgba(0, 123, 255, 0.10),
-    0 0 25px rgba(0, 123, 255, 0.55);
+    0 0 0 6px
+    rgba(0, 123, 255, 0.10),
 
-  transform: scale(1.12);
+    0 0 25px
+    rgba(0, 123, 255, 0.35);
+
+  transform:
+    scale(1.12);
 }
 
 
 .experience-item:hover
 .experience-marker span {
-  background: #ffffff;
+  background:
+    var(--text-on-primary, #ffffff);
 }
 
 
@@ -204,23 +233,28 @@
 .experience-card {
   position: relative;
 
-  padding: 30px 32px;
+  padding:
+    30px 32px;
 
   background:
-    linear-gradient(
-      145deg,
-      rgba(0, 123, 255, 0.035),
-      rgba(232, 62, 140, 0.025)
-    ),
-    var(--surface);
+    var(--surface-elevated, var(--surface));
 
-  border: 1px solid var(--border);
+  border:
+    1px solid
+    var(--border);
 
-  border-radius: 15px;
+  border-radius:
+    15px;
 
-  overflow: hidden;
+  overflow:
+    hidden;
+
+  box-shadow:
+    0 4px 20px
+    rgba(0, 0, 0, 0.04);
 
   transition:
+    background-color 0.3s ease,
     transform 0.3s ease,
     border-color 0.3s ease,
     box-shadow 0.3s ease;
@@ -240,7 +274,6 @@
   left: 0;
 
   width: 3px;
-
   height: 0;
 
   background:
@@ -257,13 +290,16 @@
 
 
 .experience-card:hover {
-  transform: translateX(5px);
+  transform:
+    translateX(5px);
 
-  border-color: var(--border-blue);
+  border-color:
+    var(--border-blue);
 
   box-shadow:
     var(--shadow-blue);
 }
+
 
 /* =================================
    ANIMATION D'APPARITION
@@ -271,40 +307,57 @@
 
 .experience-item {
   animation:
-    experienceItemIn 0.7s ease both;
+    experienceItemIn
+    0.7s ease both;
 }
+
 
 .experience-item:nth-child(1) {
-  animation-delay: 0.05s;
+  animation-delay:
+    0.05s;
 }
+
 
 .experience-item:nth-child(2) {
-  animation-delay: 0.15s;
+  animation-delay:
+    0.15s;
 }
+
 
 .experience-item:nth-child(3) {
-  animation-delay: 0.25s;
+  animation-delay:
+    0.25s;
 }
+
 
 .experience-item:nth-child(4) {
-  animation-delay: 0.35s;
+  animation-delay:
+    0.35s;
 }
 
+
 .experience-item:nth-child(5) {
-  animation-delay: 0.45s;
+  animation-delay:
+    0.45s;
 }
+
 
 @keyframes experienceItemIn {
 
   from {
     opacity: 0;
-    transform: translateY(25px);
+
+    transform:
+      translateY(25px);
   }
 
   to {
     opacity: 1;
-    transform: translateY(0);
+
+    transform:
+      translateY(0);
   }
+
 }
 
 
@@ -330,17 +383,23 @@
 .experience-index {
   display: block;
 
-  margin-bottom: 7px;
+  margin-bottom:
+    7px;
 
-  color: var(--color-pink);
+  color:
+    var(--color-pink);
 
-  font-family: var(--mono);
+  font-family:
+    var(--mono);
 
-  font-size: 0.7rem;
+  font-size:
+    0.7rem;
 
-  font-weight: 700;
+  font-weight:
+    700;
 
-  letter-spacing: 1px;
+  letter-spacing:
+    1px;
 }
 
 
@@ -349,31 +408,40 @@
 ================================= */
 
 .experience-card-header h3 {
-  margin: 0 0 7px;
+  margin:
+    0 0 7px;
 
-  color: var(--text-primary);
+  color:
+    var(--text-primary);
 
-  font-size: clamp(
-    1.15rem,
-    2vw,
-    1.3rem
-  );
+  font-size:
+    clamp(
+      1.15rem,
+      2vw,
+      1.3rem
+    );
 
-  line-height: 1.35;
+  line-height:
+    1.35;
 }
+
 
 /* =================================
    ORGANIZATION
 ================================= */
 
 .experience-card-header h4 {
-  margin: 0;
+  margin:
+    0;
 
-  color: var(--color-blue);
+  color:
+    var(--color-blue);
 
-  font-size: 0.95rem;
+  font-size:
+    0.95rem;
 
-  font-weight: 600;
+  font-weight:
+    600;
 }
 
 
@@ -382,25 +450,37 @@
 ================================= */
 
 .experience-date {
-  flex-shrink: 0;
+  flex-shrink:
+    0;
 
-  padding: 7px 11px;
+  padding:
+    7px 11px;
 
-  color: var(--color-orange);
+  color:
+    var(--color-orange);
 
   background:
     rgba(253, 126, 20, 0.07);
 
-  border: 1px solid
+  border:
+    1px solid
     rgba(253, 126, 20, 0.22);
 
-  border-radius: 7px;
+  border-radius:
+    7px;
 
-  font-family: var(--mono);
+  font-family:
+    var(--mono);
 
-  font-size: 0.72rem;
+  font-size:
+    0.72rem;
 
-  white-space: nowrap;
+  white-space:
+    nowrap;
+
+  transition:
+    background-color 0.3s ease,
+    border-color 0.3s ease;
 }
 
 
@@ -413,9 +493,11 @@
 
   height: 1px;
 
-  margin: 22px 0;
+  margin:
+    22px 0;
 
-  background: var(--border);
+  background:
+    var(--border);
 }
 
 
@@ -424,13 +506,17 @@
 ================================= */
 
 .experience-description {
-  margin: 0;
+  margin:
+    0;
 
-  color: var(--text-secondary);
+  color:
+    var(--text-secondary);
 
-  font-size: 0.95rem;
+  font-size:
+    0.95rem;
 
-  line-height: 1.8;
+  line-height:
+    1.8;
 }
 
 
@@ -439,21 +525,38 @@
 ================================= */
 
 .experience-empty {
-  max-width: 700px;
+  max-width:
+    700px;
 
-  margin: 0 auto;
+  margin:
+    0 auto;
 
-  padding: 35px;
+  padding:
+    35px;
 
-  text-align: center;
+  text-align:
+    center;
 
-  color: var(--text-secondary);
+  color:
+    var(--text-secondary);
 
-  background: var(--surface);
+  background:
+    var(--surface-elevated, var(--surface));
 
-  border: 1px solid var(--border);
+  border:
+    1px solid
+    var(--border);
 
-  border-radius: 14px;
+  border-radius:
+    14px;
+
+  box-shadow:
+    0 4px 20px
+    rgba(0, 0, 0, 0.04);
+
+  transition:
+    background-color 0.3s ease,
+    border-color 0.3s ease;
 }
 
 
@@ -462,15 +565,23 @@
 ================================= */
 
 .experience-state {
-  min-height: 50vh;
+  min-height:
+    50vh;
 
-  display: flex;
+  display:
+    flex;
 
-  align-items: center;
+  align-items:
+    center;
 
-  justify-content: center;
+  justify-content:
+    center;
 
-  text-align: center;
+  text-align:
+    center;
+
+  color:
+    var(--text-secondary);
 }
 
 
@@ -488,29 +599,35 @@
 
 
   .experience-heading {
-    margin-bottom: 55px;
+    margin-bottom:
+      55px;
   }
 
 
   .experience-item {
-    grid-template-columns: 40px 1fr;
+    grid-template-columns:
+      40px 1fr;
 
-    gap: 20px;
+    gap:
+      20px;
   }
 
 
   .experience-marker {
-    width: 40px;
+    width:
+      40px;
   }
 
 
   .experience-timeline::before {
-    left: 20px;
+    left:
+      20px;
   }
 
 
   .experience-card {
-    padding: 27px;
+    padding:
+      27px;
   }
 
 }
@@ -530,82 +647,104 @@
 
 
   .experience-intro {
-    font-size: 0.93rem;
+    font-size:
+      0.93rem;
   }
 
 
   .experience-timeline::before {
-    left: 13px;
+    left:
+      13px;
   }
 
 
   .experience-item {
-    grid-template-columns: 27px 1fr;
+    grid-template-columns:
+      27px 1fr;
 
-    gap: 15px;
+    gap:
+      15px;
 
-    margin-bottom: 25px;
+    margin-bottom:
+      25px;
   }
 
 
   .experience-marker {
-    width: 27px;
+    width:
+      27px;
 
-    padding-top: 28px;
+    padding-top:
+      28px;
   }
 
 
   .experience-marker::before {
-    width: 14px;
+    width:
+      14px;
 
-    height: 14px;
+    height:
+      14px;
 
-    top: 25px;
+    top:
+      25px;
   }
 
 
   .experience-marker span {
-    top: 29px;
+    top:
+      29px;
 
-    width: 4px;
+    width:
+      4px;
 
-    height: 4px;
+    height:
+      4px;
   }
 
 
   .experience-card {
-    padding: 23px;
+    padding:
+      23px;
 
-    border-radius: 13px;
+    border-radius:
+      13px;
   }
 
 
   .experience-card:hover {
-    transform: translateY(-3px);
+    transform:
+      translateY(-3px);
   }
 
 
   .experience-card-header {
-    flex-direction: column;
+    flex-direction:
+      column;
 
-    gap: 15px;
+    gap:
+      15px;
   }
 
 
   .experience-date {
-    align-self: flex-start;
+    align-self:
+      flex-start;
   }
 
 
   .experience-card-header h3 {
-    font-size: 1.15rem;
+    font-size:
+      1.15rem;
   }
 
 
   .experience-description {
-    font-size: 0.9rem;
+    font-size:
+      0.9rem;
 
-    line-height: 1.75;
+    line-height:
+      1.75;
   }
 
 }
@@ -618,22 +757,27 @@
 @media (max-width: 360px) {
 
   .experience {
-    padding-left: 15px;
+    padding-left:
+      15px;
 
-    padding-right: 15px;
+    padding-right:
+      15px;
   }
 
 
   .experience-card {
-    padding: 20px;
+    padding:
+      20px;
   }
 
 
   .experience-item {
-    gap: 12px;
+    gap:
+      12px;
   }
 
 }
+
 
 /* =================================
    ACCESSIBILITÉ
@@ -645,8 +789,11 @@
   .experience-item,
   .experience-card,
   .experience-marker::before {
-    animation: none;
-    transition: none;
+    animation:
+      none;
+
+    transition:
+      none;
   }
 
 }

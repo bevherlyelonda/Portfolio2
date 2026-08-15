@@ -5,14 +5,19 @@
 .projects {
   position: relative;
 
-  padding: 110px 25px 110px;
+  padding:
+    110px 25px
+    110px;
 
   background:
     linear-gradient(
       180deg,
-      var(--color-black),
-      var(--surface)
+      var(--surface),
+      var(--background)
     );
+
+  color:
+    var(--text-primary);
 }
 
 
@@ -34,20 +39,26 @@
 ================================= */
 
 .projects-heading {
-  margin-bottom: 60px;
+  margin-bottom:
+    60px;
 }
 
 
 .projects-intro {
-  max-width: 720px;
+  max-width:
+    720px;
 
-  margin: 25px auto 0;
+  margin:
+    25px auto 0;
 
-  color: var(--text-secondary);
+  color:
+    var(--text-secondary);
 
-  font-size: 0.98rem;
+  font-size:
+    0.98rem;
 
-  line-height: 1.8;
+  line-height:
+    1.8;
 }
 
 
@@ -56,16 +67,23 @@
 ================================= */
 
 .projects-grid {
-  display: grid;
+  display:
+    grid;
 
   grid-template-columns:
-    repeat(2, minmax(0, 1fr));
+    repeat(
+      2,
+      minmax(0, 1fr)
+    );
 
-  gap: 25px;
+  gap:
+    25px;
 
-  max-width: 1050px;
+  max-width:
+    1050px;
 
-  margin: 0 auto;
+  margin:
+    0 auto;
 }
 
 
@@ -74,11 +92,14 @@
 ================================= */
 
 .project-wrapper {
-  min-width: 0;
+  min-width:
+    0;
 
-  position: relative;
+  position:
+    relative;
 
-  border-radius: 16px;
+  border-radius:
+    16px;
 
   transition:
     transform 0.3s ease;
@@ -86,7 +107,8 @@
 
 
 .project-wrapper:hover {
-  transform: translateY(-5px);
+  transform:
+    translateY(-5px);
 }
 
 
@@ -96,40 +118,61 @@
 
 .project-wrapper {
   animation:
-    projectCardIn 0.7s ease both;
+    projectCardIn
+    0.7s
+    ease
+    both;
 }
+
 
 .project-wrapper:nth-child(1) {
-  animation-delay: 0.05s;
+  animation-delay:
+    0.05s;
 }
+
 
 .project-wrapper:nth-child(2) {
-  animation-delay: 0.15s;
+  animation-delay:
+    0.15s;
 }
+
 
 .project-wrapper:nth-child(3) {
-  animation-delay: 0.25s;
+  animation-delay:
+    0.25s;
 }
+
 
 .project-wrapper:nth-child(4) {
-  animation-delay: 0.35s;
+  animation-delay:
+    0.35s;
 }
 
+
 .project-wrapper:nth-child(5) {
-  animation-delay: 0.45s;
+  animation-delay:
+    0.45s;
 }
+
 
 @keyframes projectCardIn {
 
   from {
-    opacity: 0;
-    transform: translateY(25px);
+    opacity:
+      0;
+
+    transform:
+      translateY(25px);
   }
 
   to {
-    opacity: 1;
-    transform: translateY(0);
+    opacity:
+      1;
+
+    transform:
+      translateY(0);
   }
+
 }
 
 
@@ -138,18 +181,26 @@
 ================================= */
 
 .project-wrapper::before {
-  content: "";
+  content:
+    "";
 
-  position: absolute;
+  position:
+    absolute;
 
-  top: 0;
-  left: 0;
+  top:
+    0;
 
-  width: 100%;
+  left:
+    0;
 
-  height: 2px;
+  width:
+    100%;
 
-  z-index: 2;
+  height:
+    2px;
+
+  z-index:
+    2;
 
   background:
     var(--gradient-primary);
@@ -157,9 +208,11 @@
   border-radius:
     16px 16px 0 0;
 
-  transform: scaleX(0);
+  transform:
+    scaleX(0);
 
-  transform-origin: left;
+  transform-origin:
+    left;
 
   transition:
     transform 0.4s ease;
@@ -167,7 +220,8 @@
 
 
 .project-wrapper:hover::before {
-  transform: scaleX(1);
+  transform:
+    scaleX(1);
 }
 
 
@@ -176,44 +230,67 @@
 ================================= */
 
 .projects-more {
-  display: flex;
+  display:
+    flex;
 
-  justify-content: center;
+  justify-content:
+    center;
 
-  margin-top: 55px;
+  margin-top:
+    55px;
 }
 
 
 .projects-more-button {
-  display: inline-flex;
+  display:
+    inline-flex;
 
-  align-items: center;
+  align-items:
+    center;
 
-  justify-content: center;
+  justify-content:
+    center;
 
-  gap: 12px;
+  gap:
+    12px;
 
   padding:
     13px 22px;
 
-  color: var(--color-blue);
+  color:
+    var(--color-blue);
 
   background:
-    rgba(0, 123, 255, 0.05);
+    rgba(
+      56,
+      189,
+      248,
+      0.06
+    );
 
-  border: 1px solid
-    rgba(0, 123, 255, 0.35);
+  border:
+    1px solid
+    rgba(
+      56,
+      189,
+      248,
+      0.35
+    );
 
-  border-radius: 9px;
+  border-radius:
+    9px;
 
-  font-size: 0.9rem;
+  font-size:
+    0.9rem;
 
-  font-weight: 600;
+  font-weight:
+    600;
 
-  text-decoration: none;
+  text-decoration:
+    none;
 
   box-shadow:
-    0 8px 25px rgba(0, 0, 0, 0.12);
+    var(--shadow-sm);
 
   transition:
     color 0.3s ease,
@@ -225,7 +302,8 @@
 
 
 .projects-more-button:hover {
-  color: #ffffff;
+  color:
+    var(--button-primary-text);
 
   background:
     var(--color-blue);
@@ -246,7 +324,8 @@
 ================================= */
 
 .projects-arrow {
-  font-size: 1.15rem;
+  font-size:
+    1.15rem;
 
   transition:
     transform 0.3s ease;
@@ -265,22 +344,33 @@
 ================================= */
 
 .projects-empty {
-  max-width: 700px;
+  max-width:
+    700px;
 
-  margin: 0 auto;
+  margin:
+    0 auto;
 
-  padding: 35px;
+  padding:
+    35px;
 
-  text-align: center;
+  text-align:
+    center;
 
-  color: var(--text-secondary);
+  color:
+    var(--text-secondary);
 
   background:
     var(--surface);
 
-  border: 1px solid var(--border);
+  border:
+    1px solid
+    var(--border);
 
-  border-radius: 14px;
+  border-radius:
+    14px;
+
+  box-shadow:
+    var(--shadow-sm);
 }
 
 
@@ -289,15 +379,40 @@
 ================================= */
 
 .projects-state {
-  min-height: 50vh;
+  min-height:
+    50vh;
 
-  display: flex;
+  display:
+    flex;
 
-  align-items: center;
+  align-items:
+    center;
 
-  justify-content: center;
+  justify-content:
+    center;
 
-  text-align: center;
+  text-align:
+    center;
+
+  color:
+    var(--text-secondary);
+
+  background:
+    var(--background);
+}
+
+
+/* =================================
+   FOCUS ACCESSIBLE
+================================= */
+
+.projects-more-button:focus-visible {
+  outline:
+    2px solid
+    var(--color-blue);
+
+  outline-offset:
+    4px;
 }
 
 
@@ -315,9 +430,11 @@
 
 
   .projects-grid {
-    grid-template-columns: 1fr;
+    grid-template-columns:
+      1fr;
 
-    max-width: 650px;
+    max-width:
+      650px;
   }
 
 }
@@ -337,29 +454,35 @@
 
 
   .projects-heading {
-    margin-bottom: 45px;
+    margin-bottom:
+      45px;
   }
 
 
   .projects-intro {
-    font-size: 0.93rem;
+    font-size:
+      0.93rem;
   }
 
 
   .projects-grid {
-    gap: 18px;
+    gap:
+      18px;
   }
 
 
   .projects-more {
-    margin-top: 40px;
+    margin-top:
+      40px;
   }
 
 
   .projects-more-button {
-    width: 100%;
+    width:
+      100%;
 
-    max-width: 320px;
+    max-width:
+      320px;
   }
 
 }
@@ -372,15 +495,17 @@
 @media (max-width: 360px) {
 
   .projects {
-    padding-left: 15px;
+    padding-left:
+      15px;
 
-    padding-right: 15px;
+    padding-right:
+      15px;
   }
 
 }
 
+
 /* =================================
-   ACCESSIBILITÉ
    RÉDUCTION DES ANIMATIONS
 ================================= */
 
@@ -389,9 +514,11 @@
   .project-wrapper,
   .projects-more-button,
   .projects-arrow {
-    animation: none;
+    animation:
+      none;
 
-    transition: none;
+    transition:
+      none;
   }
 
 }

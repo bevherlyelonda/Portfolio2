@@ -75,50 +75,50 @@ function Contact() {
           HEADER
       ================================= */}
 
-      <div className="contact-page-heading">
+      <header className="contact-page-heading">
 
         <span className="contact-page-label">
           CONTACT
         </span>
 
-        <h1>
+        <h1 className="contact-page-title">
           Contactez <span>-moi</span>
         </h1>
 
         <div className="contact-page-line"></div>
 
-        <p>
+        <p className="contact-page-description">
           Une question, une proposition professionnelle ou
           simplement envie d'échanger ? Je serai ravi de vous
           répondre.
         </p>
 
-      </div>
+      </header>
 
 
       {/* =================================
           CONTACT CONTENT
       ================================= */}
 
-      <div className="contact-page-container">
+      <section className="contact-page-container">
 
         {/* =================================
             INTRODUCTION
         ================================= */}
 
-        <div className="contact-page-intro">
+        <article className="contact-page-intro">
 
           <div className="contact-page-intro-badge">
             <span></span>
             DISPONIBLE POUR ÉCHANGER
           </div>
 
-          <h2>
+          <h2 className="contact-intro-title">
             Construisons quelque chose
             <strong> d'intéressant.</strong>
           </h2>
 
-          <p>
+          <p className="contact-intro-text">
             Que ce soit autour d'un projet informatique,
             d'une opportunité professionnelle, de bases de
             données Oracle ou de Data Science et d'Intelligence
@@ -131,26 +131,26 @@ function Contact() {
             <span></span>
           </div>
 
-        </div>
+        </article>
 
 
         {/* =================================
             FORM CARD
         ================================= */}
 
-        <div className="contact-form-card">
+        <section className="contact-form-card">
 
           <div className="contact-form-header">
 
-            <span>
+            <span className="contact-form-label">
               ENVOYER UN MESSAGE
             </span>
 
-            <h2>
+            <h2 className="contact-form-title">
               Parlons ensemble
             </h2>
 
-            <p>
+            <p className="contact-form-description">
               Remplissez le formulaire ci-dessous et je vous
               répondrai dans les meilleurs délais.
             </p>
@@ -171,7 +171,10 @@ function Contact() {
 
               <div className="form-group">
 
-                <label htmlFor="name">
+                <label
+                  htmlFor="name"
+                  className="form-label"
+                >
                   Nom
                 </label>
 
@@ -179,6 +182,7 @@ function Contact() {
                   type="text"
                   id="name"
                   name="name"
+                  className="form-input"
                   placeholder="Votre nom"
                   value={formData.name}
                   onChange={handleChange}
@@ -190,7 +194,10 @@ function Contact() {
 
               <div className="form-group">
 
-                <label htmlFor="email">
+                <label
+                  htmlFor="email"
+                  className="form-label"
+                >
                   Email
                 </label>
 
@@ -198,6 +205,7 @@ function Contact() {
                   type="email"
                   id="email"
                   name="email"
+                  className="form-input"
                   placeholder="votre@email.com"
                   value={formData.email}
                   onChange={handleChange}
@@ -215,7 +223,10 @@ function Contact() {
 
             <div className="form-group">
 
-              <label htmlFor="subject">
+              <label
+                htmlFor="subject"
+                className="form-label"
+              >
                 Sujet
               </label>
 
@@ -223,6 +234,7 @@ function Contact() {
                 type="text"
                 id="subject"
                 name="subject"
+                className="form-input"
                 placeholder="Objet de votre message"
                 value={formData.subject}
                 onChange={handleChange}
@@ -238,13 +250,17 @@ function Contact() {
 
             <div className="form-group">
 
-              <label htmlFor="message">
+              <label
+                htmlFor="message"
+                className="form-label"
+              >
                 Message
               </label>
 
               <textarea
                 id="message"
                 name="message"
+                className="form-input form-textarea"
                 placeholder="Écrivez votre message..."
                 value={formData.message}
                 onChange={handleChange}
@@ -301,7 +317,7 @@ function Contact() {
 
             <div className="contact-form-footer">
 
-              <p>
+              <p className="contact-form-footer-text">
                 Vos informations restent confidentielles.
               </p>
 
@@ -327,9 +343,9 @@ function Contact() {
 
           </form>
 
-        </div>
+        </section>
 
-      </div>
+      </section>
 
     </main>
   );

@@ -11,8 +11,12 @@ function Experience() {
     async function loadExperiences() {
       try {
         const data = await getExperiences();
+
+        console.log("Expériences reçues :", data);
+
         setExperiences(data);
       } catch (error) {
+        console.error("Erreur :", error);
         setError(error.message);
       } finally {
         setLoading(false);
@@ -21,6 +25,10 @@ function Experience() {
 
     loadExperiences();
   }, []);
+
+  // =================================
+  // CHARGEMENT
+  // =================================
 
   if (loading) {
     return (
@@ -33,6 +41,10 @@ function Experience() {
     );
   }
 
+  // =================================
+  // ERREUR
+  // =================================
+
   if (error) {
     return (
       <section
@@ -43,6 +55,10 @@ function Experience() {
       </section>
     );
   }
+
+  // =================================
+  // AFFICHAGE
+  // =================================
 
   return (
     <section id="experience" className="experience">
@@ -66,69 +82,112 @@ function Experience() {
           <div className="section-line"></div>
 
           <p className="experience-intro">
-            Un parcours construit autour de l'administration
-            des bases de données, des systèmes informatiques
-            et du développement de compétences en Data Science
-            et Intelligence Artificielle.
+            Découvrez mon parcours professionnel,
+            mes responsabilités et les différentes
+            expériences qui ont contribué à mon évolution.
           </p>
 
         </div>
 
 
         {/* =================================
-            TIMELINE
+            EXPÉRIENCES
         ================================= */}
 
         {experiences.length > 0 ? (
+
           <div className="experience-timeline">
 
             {experiences.map((experience, index) => (
 
               <article
-                key={experience.id}
+                key={experience.id || index}
                 className="experience-item"
               >
 
-                {/* POINT SUR LA TIMELINE */}
+                {/* =================================
+                    POINT TIMELINE
+                ================================= */}
 
-                <div className="experience-marker">
+                <div
+                  className="experience-marker"
+                  aria-hidden="true"
+                >
                   <span></span>
                 </div>
 
 
-                {/* CONTENU */}
+                {/* =================================
+                    CARTE EXPÉRIENCE
+                ================================= */}
 
                 <div className="experience-card">
 
+                  {/* =================================
+                      EN-TÊTE
+                  ================================= */}
+
                   <div className="experience-card-header">
 
-                    <div>
+                    <div className="experience-card-main">
+
+                      {/* NUMÉRO */}
 
                       <span className="experience-index">
                         {String(index + 1).padStart(2, "0")}
                       </span>
 
-                      <h3>
+
+                      {/* POSITION */}
+
+                      <h3 className="experience-position">
                         {experience.position}
                       </h3>
 
-                      <h4>
+
+                      {/* ORGANIZATION */}
+
+                      <h4 className="experience-organization">
                         {experience.organization}
                       </h4>
 
                     </div>
 
-                    <span className="experience-date">
-                      {experience.start_date}
-                      {" — "}
-                      {experience.end_date}
-                    </span>
+
+                    {/* DATES */}
+
+                    <div className="experience-date">
+
+                      <span>
+                        {experience.start_date}
+                      </span>
+
+                      <span className="experience-date-separator">
+                        —
+                      </span>
+
+                      <span>
+                        {experience.end_date}
+                      </span>
+
+                    </div>
 
                   </div>
 
 
-                  <div className="experience-divider"></div>
+                  {/* =================================
+                      SÉPARATEUR
+                  ================================= */}
 
+                  <div
+                    className="experience-divider"
+                    aria-hidden="true"
+                  ></div>
+
+
+                  {/* =================================
+                      DESCRIPTION
+                  ================================= */}
 
                   <p className="experience-description">
                     {experience.description}
@@ -141,13 +200,22 @@ function Experience() {
             ))}
 
           </div>
+
         ) : (
+
+          /* =================================
+             AUCUNE EXPÉRIENCE
+          ================================= */
+
           <div className="experience-empty">
+
             <p>
               Aucune expérience professionnelle disponible
               pour le moment.
             </p>
+
           </div>
+
         )}
 
       </div>

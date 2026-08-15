@@ -1,5 +1,6 @@
 /* =================================
    PROJECT DETAIL
+   THÈME SOMBRE / CLAIR
 ================================= */
 
 .project-detail {
@@ -10,10 +11,106 @@
   background:
     linear-gradient(
       180deg,
-      var(--color-black),
-      var(--surface) 45%,
-      var(--color-black)
+      var(--page-background),
+      var(--surface)
     );
+
+  color:
+    var(--text-primary);
+
+  transition:
+    background 0.35s ease,
+    color 0.35s ease;
+}
+
+
+/* =================================
+   VARIABLES — MODE SOMBRE
+================================= */
+
+:root[data-theme="dark"] {
+
+  --detail-page-background:
+    #0d1117;
+
+  --detail-page-surface:
+    #111820;
+
+  --detail-page-surface-secondary:
+    #151d27;
+
+  --detail-page-text:
+    #f0f6fc;
+
+  --detail-page-secondary:
+    #8b949e;
+
+  --detail-page-border:
+    #263241;
+}
+
+
+/* =================================
+   VARIABLES — MODE CLAIR
+================================= */
+
+:root[data-theme="light"] {
+
+  --detail-page-background:
+    #f4f7fb;
+
+  --detail-page-surface:
+    #ffffff;
+
+  --detail-page-surface-secondary:
+    #f8fafc;
+
+  --detail-page-text:
+    #172033;
+
+  --detail-page-secondary:
+    #647084;
+
+  --detail-page-border:
+    #d9e1ea;
+}
+
+
+/* =================================
+   APPLICATION DU THÈME — SOMBRE
+================================= */
+
+:root[data-theme="dark"] .project-detail {
+
+  background:
+    linear-gradient(
+      180deg,
+      #0d1117 0%,
+      #111820 50%,
+      #0d1117 100%
+    );
+
+  color:
+    #f0f6fc;
+}
+
+
+/* =================================
+   APPLICATION DU THÈME — CLAIR
+================================= */
+
+:root[data-theme="light"] .project-detail {
+
+  background:
+    linear-gradient(
+      180deg,
+      #f4f7fb 0%,
+      #ffffff 50%,
+      #f4f7fb 100%
+    );
+
+  color:
+    #172033;
 }
 
 
@@ -22,16 +119,21 @@
 ================================= */
 
 .project-detail-container {
-  width: 100%;
 
-  max-width: 1050px;
+  width:
+    100%;
 
-  margin: 0 auto;
+  max-width:
+    1050px;
+
+  margin:
+    0 auto;
 
   padding:
     0 25px;
 
-  box-sizing: border-box;
+  box-sizing:
+    border-box;
 }
 
 
@@ -40,12 +142,47 @@
 ================================= */
 
 .project-detail-hero {
+
   padding:
     80px 0
     75px;
 
   border-bottom:
-    1px solid var(--border);
+    1px solid
+    var(--detail-page-border);
+
+  transition:
+    border-color 0.35s ease;
+}
+
+
+/* =================================
+   HERO — CLAIR
+================================= */
+
+:root[data-theme="light"] .project-detail-hero {
+
+  background:
+    linear-gradient(
+      180deg,
+      transparent,
+      rgba(0, 123, 255, 0.025)
+    );
+}
+
+
+/* =================================
+   HERO — SOMBRE
+================================= */
+
+:root[data-theme="dark"] .project-detail-hero {
+
+  background:
+    linear-gradient(
+      180deg,
+      transparent,
+      rgba(0, 123, 255, 0.018)
+    );
 }
 
 
@@ -54,14 +191,18 @@
 ================================= */
 
 .project-detail-back {
-  display: inline-flex;
 
-  align-items: center;
+  display:
+    inline-flex;
 
-  margin-bottom: 40px;
+  align-items:
+    center;
+
+  margin-bottom:
+    40px;
 
   color:
-    var(--text-secondary);
+    var(--detail-page-secondary);
 
   font-size:
     0.85rem;
@@ -79,6 +220,7 @@
 
 
 .project-detail-back:hover {
+
   color:
     var(--color-blue);
 
@@ -92,13 +234,18 @@
 ================================= */
 
 .project-detail-category {
-  display: inline-flex;
 
-  align-items: center;
+  display:
+    inline-flex;
 
-  gap: 9px;
+  align-items:
+    center;
 
-  margin-bottom: 20px;
+  gap:
+    9px;
+
+  margin-bottom:
+    20px;
 
   padding:
     7px 11px;
@@ -127,6 +274,25 @@
 
   text-transform:
     uppercase;
+
+  transition:
+    background 0.35s ease,
+    border-color 0.35s ease,
+    color 0.35s ease;
+}
+
+
+/* =================================
+   CATEGORY — CLAIR
+================================= */
+
+:root[data-theme="light"] .project-detail-category {
+
+  background:
+    rgba(232, 62, 140, 0.045);
+
+  border-color:
+    rgba(232, 62, 140, 0.20);
 }
 
 
@@ -135,6 +301,7 @@
 ================================= */
 
 .project-detail-category-dot {
+
   width:
     6px;
 
@@ -158,6 +325,7 @@
 ================================= */
 
 .project-detail-hero h1 {
+
   max-width:
     900px;
 
@@ -165,7 +333,7 @@
     0;
 
   color:
-    var(--text-primary);
+    var(--detail-page-text);
 
   font-size:
     clamp(
@@ -179,6 +347,9 @@
 
   letter-spacing:
     -1.5px;
+
+  transition:
+    color 0.35s ease;
 }
 
 
@@ -187,6 +358,7 @@
 ================================= */
 
 .project-detail-line {
+
   width:
     65px;
 
@@ -209,6 +381,7 @@
 ================================= */
 
 .project-detail-description {
+
   max-width:
     800px;
 
@@ -216,13 +389,16 @@
     0;
 
   color:
-    var(--text-secondary);
+    var(--detail-page-secondary);
 
   font-size:
     1.05rem;
 
   line-height:
     1.85;
+
+  transition:
+    color 0.35s ease;
 }
 
 
@@ -231,9 +407,13 @@
 ================================= */
 
 .project-detail-content {
+
   padding:
     80px 0
     110px;
+
+  background:
+    transparent;
 }
 
 
@@ -242,23 +422,28 @@
 ================================= */
 
 .project-detail-section {
+
   margin-bottom:
     65px;
 }
 
 
 .project-detail-section h2 {
+
   margin:
     0 0 20px;
 
   color:
-    var(--text-primary);
+    var(--detail-page-text);
 
   font-size:
     1.55rem;
 
   font-weight:
     600;
+
+  transition:
+    color 0.35s ease;
 }
 
 
@@ -267,9 +452,12 @@
 ================================= */
 
 .project-detail-section h2::after {
-  content: "";
 
-  display: block;
+  content:
+    "";
+
+  display:
+    block;
 
   width:
     35px;
@@ -293,30 +481,76 @@
 ================================= */
 
 .project-detail-card {
+
   padding:
     30px;
 
   background:
     linear-gradient(
-      135deg,
-      rgba(0, 123, 255, 0.04),
-      rgba(232, 62, 140, 0.025)
+      145deg,
+      rgba(0, 123, 255, 0.035),
+      rgba(232, 62, 140, 0.015)
     ),
-    var(--surface);
+    var(--detail-page-surface);
 
   border:
-    1px solid var(--border);
+    1px solid
+    var(--detail-page-border);
 
   border-radius:
     14px;
 
   transition:
-    border-color 0.3s ease,
-    box-shadow 0.3s ease;
+    background 0.35s ease,
+    border-color 0.35s ease,
+    box-shadow 0.35s ease;
 }
 
 
+/* =================================
+   CARD — CLAIR
+================================= */
+
+:root[data-theme="light"] .project-detail-card {
+
+  background:
+    linear-gradient(
+      145deg,
+      rgba(0, 123, 255, 0.025),
+      rgba(232, 62, 140, 0.01)
+    ),
+    #ffffff;
+
+  border-color:
+    #d9e1ea;
+}
+
+
+/* =================================
+   CARD — SOMBRE
+================================= */
+
+:root[data-theme="dark"] .project-detail-card {
+
+  background:
+    linear-gradient(
+      145deg,
+      rgba(0, 123, 255, 0.045),
+      rgba(232, 62, 140, 0.018)
+    ),
+    #111820;
+
+  border-color:
+    #263241;
+}
+
+
+/* =================================
+   CARD HOVER
+================================= */
+
 .project-detail-card:hover {
+
   border-color:
     rgba(0, 123, 255, 0.35);
 
@@ -325,18 +559,26 @@
 }
 
 
+/* =================================
+   CARD TEXT
+================================= */
+
 .project-detail-card p {
+
   margin:
     0;
 
   color:
-    var(--text-secondary);
+    var(--detail-page-secondary);
 
   font-size:
     0.95rem;
 
   line-height:
     1.85;
+
+  transition:
+    color 0.35s ease;
 }
 
 
@@ -345,6 +587,7 @@
 ================================= */
 
 .project-detail-technologies {
+
   display:
     flex;
 
@@ -361,6 +604,7 @@
 ================================= */
 
 .technology-tag {
+
   display:
     inline-flex;
 
@@ -388,6 +632,25 @@
 
   font-weight:
     600;
+
+  transition:
+    background 0.35s ease,
+    border-color 0.35s ease,
+    color 0.35s ease;
+}
+
+
+/* =================================
+   TECHNOLOGY — CLAIR
+================================= */
+
+:root[data-theme="light"] .technology-tag {
+
+  background:
+    rgba(0, 123, 255, 0.045);
+
+  border-color:
+    rgba(0, 123, 255, 0.20);
 }
 
 
@@ -396,6 +659,7 @@
 ================================= */
 
 .project-images {
+
   display:
     grid;
 
@@ -411,10 +675,11 @@
 
 
 /* =================================
-   IMAGE
+   IMAGE CARD
 ================================= */
 
 .project-image {
+
   margin:
     0;
 
@@ -422,15 +687,20 @@
     hidden;
 
   background:
-    var(--surface);
+    var(--detail-page-surface);
 
   border:
-    1px solid var(--border);
+    1px solid
+    var(--detail-page-border);
 
   border-radius:
     14px;
 
+  cursor:
+    zoom-in;
+
   transition:
+    background 0.35s ease,
     transform 0.3s ease,
     border-color 0.3s ease,
     box-shadow 0.3s ease;
@@ -438,6 +708,7 @@
 
 
 .project-image:hover {
+
   transform:
     translateY(-4px);
 
@@ -449,7 +720,12 @@
 }
 
 
+/* =================================
+   IMAGE
+================================= */
+
 .project-image img {
+
   display:
     block;
 
@@ -472,20 +748,25 @@
 ================================= */
 
 .project-image figcaption {
+
   padding:
     13px 16px;
 
   color:
-    var(--text-secondary);
+    var(--detail-page-secondary);
 
   background:
-    rgba(0, 0, 0, 0.15);
+    var(--detail-page-surface-secondary);
 
   font-size:
     0.78rem;
 
   line-height:
     1.5;
+
+  transition:
+    background 0.35s ease,
+    color 0.35s ease;
 }
 
 
@@ -494,6 +775,7 @@
 ================================= */
 
 .project-detail-result {
+
   position:
     relative;
 
@@ -516,10 +798,37 @@
 
   overflow:
     hidden;
+
+  transition:
+    background 0.35s ease,
+    border-color 0.35s ease;
 }
 
 
+/* =================================
+   RESULT — CLAIR
+================================= */
+
+:root[data-theme="light"] .project-detail-result {
+
+  background:
+    linear-gradient(
+      135deg,
+      rgba(0, 123, 255, 0.055),
+      rgba(232, 62, 140, 0.035)
+    );
+
+  border-color:
+    rgba(0, 123, 255, 0.20);
+}
+
+
+/* =================================
+   RESULT ACCENT
+================================= */
+
 .project-detail-result::before {
+
   content:
     "";
 
@@ -543,18 +852,26 @@
 }
 
 
+/* =================================
+   RESULT TEXT
+================================= */
+
 .project-detail-result p {
+
   margin:
     0;
 
   color:
-    var(--text-primary);
+    var(--detail-page-text);
 
   font-size:
     1rem;
 
   line-height:
     1.85;
+
+  transition:
+    color 0.35s ease;
 }
 
 
@@ -563,6 +880,7 @@
 ================================= */
 
 .project-detail-footer {
+
   display:
     flex;
 
@@ -579,6 +897,7 @@
 ================================= */
 
 .project-detail-back-button {
+
   display:
     inline-flex;
 
@@ -616,16 +935,21 @@
   transition:
     color 0.3s ease,
     background 0.3s ease,
+    border-color 0.3s ease,
     transform 0.3s ease,
     box-shadow 0.3s ease;
 }
 
 
 .project-detail-back-button:hover {
+
   color:
     #ffffff;
 
   background:
+    var(--color-blue);
+
+  border-color:
     var(--color-blue);
 
   transform:
@@ -641,6 +965,7 @@
 ================================= */
 
 .project-detail-state {
+
   min-height:
     100vh;
 
@@ -653,173 +978,74 @@
   justify-content:
     center;
 
+  padding:
+    100px 25px;
+
+  box-sizing:
+    border-box;
+
+  background:
+    linear-gradient(
+      180deg,
+      var(--detail-page-background),
+      var(--detail-page-surface)
+    );
+
+  color:
+    var(--detail-page-secondary);
+
   text-align:
     center;
 
-  color:
-    var(--text-secondary);
+  transition:
+    background 0.35s ease,
+    color 0.35s ease;
+}
+
+
+.project-detail-state p {
+
+  margin:
+    0;
+
+  font-size:
+    0.9rem;
+
+  line-height:
+    1.7;
 }
 
 
 /* =================================
-   TABLET
-================================= */
-
-@media (max-width: 800px) {
-
-  .project-detail {
-    padding-top:
-      65px;
-  }
-
-
-  .project-detail-hero {
-    padding:
-      65px 0
-      60px;
-  }
-
-
-  .project-detail-content {
-    padding:
-      60px 0
-      80px;
-  }
-
-
-  .project-images {
-    grid-template-columns:
-      1fr;
-  }
-
-}
-
-
-/* =================================
-   MOBILE
-================================= */
-
-@media (max-width: 600px) {
-
-  .project-detail-container {
-    padding:
-      0 20px;
-  }
-
-
-  .project-detail-hero {
-    padding:
-      55px 0
-      50px;
-  }
-
-
-  .project-detail-back {
-    margin-bottom:
-      30px;
-  }
-
-
-  .project-detail-hero h1 {
-    font-size:
-      2.15rem;
-
-    letter-spacing:
-      -0.8px;
-  }
-
-
-  .project-detail-description {
-    font-size:
-      0.93rem;
-  }
-
-
-  .project-detail-content {
-    padding:
-      50px 0
-      65px;
-  }
-
-
-  .project-detail-section {
-    margin-bottom:
-      50px;
-  }
-
-
-  .project-detail-section h2 {
-    font-size:
-      1.3rem;
-  }
-
-
-  .project-detail-card {
-    padding:
-      23px;
-  }
-
-
-  .project-detail-result {
-    padding:
-      28px 25px;
-  }
-
-
-  .project-detail-back-button {
-    width:
-      100%;
-
-    justify-content:
-      center;
-
-    box-sizing:
-      border-box;
-  }
-
-}
-
-
-/* =================================
-   VERY SMALL MOBILE
-================================= */
-
-@media (max-width: 360px) {
-
-  .project-detail-container {
-    padding:
-      0 15px;
-  }
-
-
-  .project-detail-hero h1 {
-    font-size:
-      1.95rem;
-  }
-
-}
-
-
-/* =================================
-   IMAGE LIGHTBOX
+   LIGHTBOX
+   Toujours sombre volontairement
 ================================= */
 
 .image-lightbox {
-  position: fixed;
 
-  inset: 0;
+  position:
+    fixed;
 
-  z-index: 2000;
+  inset:
+    0;
 
-  display: flex;
+  z-index:
+    2000;
 
-  align-items: center;
+  display:
+    flex;
 
-  justify-content: center;
+  align-items:
+    center;
 
-  padding: 30px;
+  justify-content:
+    center;
 
-  box-sizing: border-box;
+  padding:
+    30px;
+
+  box-sizing:
+    border-box;
 
   background:
     rgba(0, 0, 0, 0.88);
@@ -840,17 +1066,24 @@
 ================================= */
 
 .image-lightbox-content {
-  position: relative;
 
-  max-width: 92vw;
+  position:
+    relative;
 
-  max-height: 90vh;
+  max-width:
+    92vw;
 
-  display: flex;
+  max-height:
+    90vh;
 
-  flex-direction: column;
+  display:
+    flex;
 
-  align-items: center;
+  flex-direction:
+    column;
+
+  align-items:
+    center;
 
   animation:
     lightboxZoomIn 0.25s ease;
@@ -862,23 +1095,31 @@
 ================================= */
 
 .image-lightbox-content img {
-  display: block;
 
-  max-width: 92vw;
+  display:
+    block;
 
-  max-height: 82vh;
+  max-width:
+    92vw;
 
-  width: auto;
+  max-height:
+    82vh;
 
-  height: auto;
+  width:
+    auto;
 
-  object-fit: contain;
+  height:
+    auto;
+
+  object-fit:
+    contain;
 
   border:
     1px solid
     rgba(255, 255, 255, 0.15);
 
-  border-radius: 10px;
+  border-radius:
+    10px;
 
   box-shadow:
     0 25px 80px
@@ -891,6 +1132,7 @@
 ================================= */
 
 .image-lightbox-content p {
+
   margin:
     15px 0 0;
 
@@ -913,31 +1155,43 @@
 ================================= */
 
 .image-lightbox-close {
-  position: fixed;
 
-  top: 22px;
+  position:
+    fixed;
 
-  right: 25px;
+  top:
+    22px;
 
-  z-index: 2001;
+  right:
+    25px;
 
-  width: 45px;
+  z-index:
+    2001;
 
-  height: 45px;
+  width:
+    45px;
 
-  display: flex;
+  height:
+    45px;
 
-  align-items: center;
+  display:
+    flex;
 
-  justify-content: center;
+  align-items:
+    center;
 
-  padding: 0;
+  justify-content:
+    center;
+
+  padding:
+    0;
 
   border:
     1px solid
     rgba(255, 255, 255, 0.25);
 
-  border-radius: 50%;
+  border-radius:
+    50%;
 
   color:
     #ffffff;
@@ -969,6 +1223,7 @@
 
 
 .image-lightbox-close:hover {
+
   color:
     #ffffff;
 
@@ -984,27 +1239,19 @@
 
 
 /* =================================
-   CLICKABLE IMAGE
-================================= */
-
-.project-image {
-  cursor:
-    zoom-in;
-}
-
-
-/* =================================
    ANIMATIONS
 ================================= */
 
 @keyframes lightboxFadeIn {
 
   from {
-    opacity: 0;
+    opacity:
+      0;
   }
 
   to {
-    opacity: 1;
+    opacity:
+      1;
   }
 
 }
@@ -1013,17 +1260,59 @@
 @keyframes lightboxZoomIn {
 
   from {
-    opacity: 0;
+
+    opacity:
+      0;
 
     transform:
       scale(0.94);
   }
 
   to {
-    opacity: 1;
+
+    opacity:
+      1;
 
     transform:
       scale(1);
+  }
+
+}
+
+
+/* =================================
+   TABLET
+================================= */
+
+@media (max-width: 800px) {
+
+  .project-detail {
+
+    padding-top:
+      65px;
+  }
+
+
+  .project-detail-hero {
+
+    padding:
+      65px 0
+      60px;
+  }
+
+
+  .project-detail-content {
+
+    padding:
+      60px 0
+      80px;
+  }
+
+
+  .project-images {
+
+    grid-template-columns:
+      1fr;
   }
 
 }
@@ -1035,13 +1324,103 @@
 
 @media (max-width: 600px) {
 
+  .project-detail-container {
+
+    padding:
+      0 20px;
+  }
+
+
+  .project-detail-hero {
+
+    padding:
+      55px 0
+      50px;
+  }
+
+
+  .project-detail-back {
+
+    margin-bottom:
+      30px;
+  }
+
+
+  .project-detail-hero h1 {
+
+    font-size:
+      2.15rem;
+
+    letter-spacing:
+      -0.8px;
+  }
+
+
+  .project-detail-description {
+
+    font-size:
+      0.93rem;
+  }
+
+
+  .project-detail-content {
+
+    padding:
+      50px 0
+      65px;
+  }
+
+
+  .project-detail-section {
+
+    margin-bottom:
+      50px;
+  }
+
+
+  .project-detail-section h2 {
+
+    font-size:
+      1.3rem;
+  }
+
+
+  .project-detail-card {
+
+    padding:
+      23px;
+  }
+
+
+  .project-detail-result {
+
+    padding:
+      28px 25px;
+  }
+
+
+  .project-detail-back-button {
+
+    width:
+      100%;
+
+    justify-content:
+      center;
+
+    box-sizing:
+      border-box;
+  }
+
+
   .image-lightbox {
+
     padding:
       20px;
   }
 
 
   .image-lightbox-content {
+
     max-width:
       96vw;
 
@@ -1051,6 +1430,7 @@
 
 
   .image-lightbox-content img {
+
     max-width:
       96vw;
 
@@ -1063,6 +1443,7 @@
 
 
   .image-lightbox-close {
+
     top:
       15px;
 
@@ -1081,8 +1462,66 @@
 
 
   .image-lightbox-content p {
+
     font-size:
       0.78rem;
+  }
+
+}
+
+
+/* =================================
+   VERY SMALL MOBILE
+================================= */
+
+@media (max-width: 360px) {
+
+  .project-detail-container {
+
+    padding:
+      0 15px;
+  }
+
+
+  .project-detail-hero h1 {
+
+    font-size:
+      1.95rem;
+  }
+
+}
+
+
+/* =================================
+   ACCESSIBILITY
+================================= */
+
+@media (prefers-reduced-motion: reduce) {
+
+  .project-detail,
+  .project-detail-hero,
+  .project-detail-back,
+  .project-detail-category,
+  .project-detail-hero h1,
+  .project-detail-description,
+  .project-detail-card,
+  .project-detail-card p,
+  .technology-tag,
+  .project-image,
+  .project-image figcaption,
+  .project-detail-result,
+  .project-detail-result p,
+  .project-detail-back-button,
+  .project-detail-state,
+  .image-lightbox,
+  .image-lightbox-content,
+  .image-lightbox-close {
+
+    transition:
+      none;
+
+    animation:
+      none;
   }
 
 }

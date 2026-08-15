@@ -6,23 +6,19 @@
   position: relative;
 
   min-height: 100vh;
-
   min-height: 100svh;
 
   display: flex;
-
   align-items: center;
 
   overflow: hidden;
 
-  padding:
-    120px 25px
-    90px;
+  padding: 120px 25px 90px;
 
   background:
     radial-gradient(
       circle at 15% 50%,
-      rgba(0, 123, 255, 0.08),
+      rgba(56, 189, 248, 0.08),
       transparent 35%
     ),
     radial-gradient(
@@ -30,7 +26,7 @@
       rgba(232, 62, 140, 0.06),
       transparent 35%
     ),
-    var(--color-black);
+    var(--background);
 }
 
 
@@ -57,16 +53,14 @@
   top: 10%;
   left: -180px;
 
-  background:
-    var(--color-blue);
+  background: var(--color-blue);
 }
 
 .presentation-background-glow-two {
   right: -180px;
   bottom: 5%;
 
-  background:
-    var(--color-pink);
+  background: var(--color-pink);
 }
 
 
@@ -80,7 +74,6 @@
   z-index: 2;
 
   width: 100%;
-
   max-width: 1150px;
 
   margin: 0 auto;
@@ -107,7 +100,6 @@
   display: flex;
 
   align-items: center;
-
   justify-content: center;
 
   animation:
@@ -134,7 +126,7 @@
   background:
     linear-gradient(
       135deg,
-      rgba(0, 123, 255, 0.22),
+      rgba(56, 189, 248, 0.22),
       rgba(232, 62, 140, 0.16)
     );
 
@@ -160,12 +152,11 @@
 
   border-radius: 20px;
 
-  background:
-    var(--gradient-primary);
+  background: var(--gradient-primary);
 
   box-shadow:
-    0 25px 60px rgba(0, 0, 0, 0.45),
-    0 0 45px rgba(0, 123, 255, 0.12);
+    var(--shadow-card),
+    0 0 45px rgba(56, 189, 248, 0.12);
 
   overflow: hidden;
 }
@@ -184,7 +175,7 @@
 
   border:
     1px solid
-    rgba(255, 255, 255, 0.12);
+    var(--border);
 
   border-radius: 17px;
 
@@ -210,8 +201,7 @@
 
   border-radius: 17px;
 
-  background:
-    var(--surface);
+  background: var(--surface);
 
   filter:
     saturate(0.95)
@@ -259,32 +249,26 @@
 
   margin-bottom: 20px;
 
-  padding:
-    7px 12px;
+  padding: 7px 12px;
 
   border:
     1px solid
-    rgba(56, 189, 248, 0.18);
+    rgba(56, 189, 248, 0.22);
 
   border-radius: 999px;
 
   background:
-    rgba(56, 189, 248, 0.05);
+    rgba(56, 189, 248, 0.06);
 
-  color:
-    var(--text-secondary);
+  color: var(--text-secondary);
 
-  font-family:
-    var(--mono);
+  font-family: var(--mono);
 
-  font-size:
-    0.68rem;
+  font-size: 0.68rem;
 
-  font-weight:
-    600;
+  font-weight: 600;
 
-  letter-spacing:
-    0.5px;
+  letter-spacing: 0.5px;
 }
 
 
@@ -300,8 +284,7 @@
 
   border-radius: 50%;
 
-  background:
-    var(--color-blue);
+  background: var(--color-blue);
 
   box-shadow:
     0 0 0 4px
@@ -320,20 +303,15 @@
 ================================= */
 
 .presentation-intro {
-  margin:
-    0 0 8px;
+  margin: 0 0 8px;
 
-  color:
-    var(--color-blue);
+  color: var(--color-blue);
 
-  font-size:
-    1rem;
+  font-size: 1rem;
 
-  font-weight:
-    600;
+  font-weight: 600;
 
-  letter-spacing:
-    1px;
+  letter-spacing: 1px;
 }
 
 
@@ -342,11 +320,9 @@
 ================================= */
 
 .presentation-name {
-  margin:
-    0;
+  margin: 0;
 
-  color:
-    var(--text-primary);
+  color: var(--text-primary);
 
   font-size:
     clamp(
@@ -355,14 +331,11 @@
       5rem
     );
 
-  line-height:
-    1.02;
+  line-height: 1.02;
 
-  letter-spacing:
-    -2.5px;
+  letter-spacing: -2.5px;
 
-  font-weight:
-    750;
+  font-weight: 750;
 }
 
 
@@ -371,24 +344,18 @@
 ================================= */
 
 .presentation-line {
-  width:
-    90px;
+  width: 90px;
+  height: 3px;
 
-  height:
-    3px;
+  margin: 22px 0;
 
-  margin:
-    22px 0;
+  border-radius: 5px;
 
-  border-radius:
-    5px;
-
-  background:
-    var(--gradient-primary);
+  background: var(--gradient-primary);
 
   box-shadow:
     0 0 18px
-    rgba(0, 123, 255, 0.18);
+    rgba(56, 189, 248, 0.18);
 }
 
 
@@ -397,14 +364,11 @@
 ================================= */
 
 .presentation-title {
-  max-width:
-    680px;
+  max-width: 680px;
 
-  margin:
-    0 0 20px;
+  margin: 0 0 20px;
 
-  color:
-    var(--text-primary);
+  color: var(--text-primary);
 
   font-size:
     clamp(
@@ -413,11 +377,9 @@
       2rem
     );
 
-  line-height:
-    1.35;
+  line-height: 1.35;
 
-  font-weight:
-    600;
+  font-weight: 600;
 }
 
 
@@ -426,20 +388,15 @@
 ================================= */
 
 .presentation-description {
-  max-width:
-    650px;
+  max-width: 650px;
 
-  margin:
-    0 0 35px;
+  margin: 0 0 35px;
 
-  color:
-    var(--text-secondary);
+  color: var(--text-secondary);
 
-  font-size:
-    1.02rem;
+  font-size: 1.02rem;
 
-  line-height:
-    1.8;
+  line-height: 1.8;
 }
 
 
@@ -448,17 +405,13 @@
 ================================= */
 
 .presentation-actions {
-  display:
-    flex;
+  display: flex;
 
-  align-items:
-    center;
+  align-items: center;
 
-  gap:
-    14px;
+  gap: 14px;
 
-  flex-wrap:
-    wrap;
+  flex-wrap: wrap;
 }
 
 
@@ -467,35 +420,24 @@
 ================================= */
 
 .presentation-button {
-  display:
-    inline-flex;
+  display: inline-flex;
 
-  align-items:
-    center;
+  align-items: center;
+  justify-content: center;
 
-  justify-content:
-    center;
+  gap: 12px;
 
-  gap:
-    12px;
+  min-height: 48px;
 
-  min-height:
-    48px;
+  padding: 12px 20px;
 
-  padding:
-    12px 20px;
+  border-radius: 9px;
 
-  border-radius:
-    9px;
+  font-size: 0.88rem;
 
-  font-size:
-    0.88rem;
+  font-weight: 600;
 
-  font-weight:
-    600;
-
-  text-decoration:
-    none;
+  text-decoration: none;
 
   transition:
     transform 0.3s ease,
@@ -510,8 +452,7 @@
 ================================= */
 
 .presentation-button-arrow {
-  font-size:
-    1rem;
+  font-size: 1rem;
 
   transition:
     transform 0.3s ease;
@@ -519,8 +460,7 @@
 
 .presentation-button:hover
 .presentation-button-arrow {
-  transform:
-    translateX(4px);
+  transform: translateX(4px);
 }
 
 
@@ -529,41 +469,28 @@
 ================================= */
 
 .presentation-scroll {
-  position:
-    absolute;
+  position: absolute;
 
-  z-index:
-    3;
+  z-index: 3;
 
-  left:
-    50%;
+  left: 50%;
+  bottom: 28px;
 
-  bottom:
-    28px;
+  transform: translateX(-50%);
 
-  transform:
-    translateX(-50%);
+  display: flex;
 
-  display:
-    flex;
+  flex-direction: column;
 
-  flex-direction:
-    column;
+  align-items: center;
 
-  align-items:
-    center;
+  gap: 5px;
 
-  gap:
-    5px;
+  color: var(--text-secondary);
 
-  color:
-    var(--text-secondary);
+  text-decoration: none;
 
-  text-decoration:
-    none;
-
-  opacity:
-    0.7;
+  opacity: 0.7;
 
   transition:
     color 0.3s ease,
@@ -571,30 +498,23 @@
 }
 
 .presentation-scroll:hover {
-  color:
-    var(--color-blue);
+  color: var(--color-blue);
 
-  opacity:
-    1;
+  opacity: 1;
 }
 
 .presentation-scroll-text {
-  font-family:
-    var(--mono);
+  font-family: var(--mono);
 
-  font-size:
-    0.62rem;
+  font-size: 0.62rem;
 
-  letter-spacing:
-    1.5px;
+  letter-spacing: 1.5px;
 
-  text-transform:
-    uppercase;
+  text-transform: uppercase;
 }
 
 .presentation-scroll-arrow {
-  font-size:
-    1rem;
+  font-size: 1rem;
 
   animation:
     scrollBounce
@@ -609,20 +529,16 @@
 ================================= */
 
 .presentation-state {
-  justify-content:
-    center;
+  justify-content: center;
 
-  text-align:
-    center;
+  text-align: center;
 
-  min-height:
-    100vh;
+  min-height: 100vh;
+  min-height: 100svh;
 
-  min-height:
-    100svh;
+  color: var(--text-secondary);
 
-  color:
-    var(--text-secondary);
+  background: var(--background);
 }
 
 
@@ -633,16 +549,14 @@
 @keyframes presentationContentIn {
 
   from {
-    opacity:
-      0;
+    opacity: 0;
 
     transform:
       translateX(30px);
   }
 
   to {
-    opacity:
-      1;
+    opacity: 1;
 
     transform:
       translateX(0);
@@ -653,16 +567,14 @@
 @keyframes presentationPhotoIn {
 
   from {
-    opacity:
-      0;
+    opacity: 0;
 
     transform:
       translateX(-30px);
   }
 
   to {
-    opacity:
-      1;
+    opacity: 1;
 
     transform:
       translateX(0);
@@ -674,16 +586,14 @@
 
   0%,
   100% {
-    opacity:
-      0.65;
+    opacity: 0.65;
 
     transform:
       scale(0.9);
   }
 
   50% {
-    opacity:
-      1;
+    opacity: 1;
 
     transform:
       scale(1);
@@ -713,24 +623,17 @@
 @media (max-width: 1000px) {
 
   .presentation-container {
-    gap:
-      55px;
+    gap: 55px;
   }
 
   .presentation-photo-frame {
-    width:
-      300px;
-
-    height:
-      375px;
+    width: 300px;
+    height: 375px;
   }
 
   .presentation-photo-glow {
-    width:
-      310px;
-
-    height:
-      310px;
+    width: 310px;
+    height: 310px;
   }
 
 }
@@ -749,55 +652,42 @@
   }
 
   .presentation-container {
-    grid-template-columns:
-      1fr;
+    grid-template-columns: 1fr;
 
-    gap:
-      50px;
+    gap: 50px;
 
-    text-align:
-      center;
+    text-align: center;
   }
 
   .presentation-photo-wrapper {
-    order:
-      1;
+    order: 1;
   }
 
   .presentation-content {
-    order:
-      2;
+    order: 2;
 
-    margin:
-      0 auto;
+    margin: 0 auto;
   }
 
   .presentation-status {
-    margin-bottom:
-      17px;
+    margin-bottom: 17px;
   }
 
   .presentation-line {
-    margin:
-      20px auto;
+    margin: 20px auto;
   }
 
   .presentation-description {
-    margin-left:
-      auto;
-
-    margin-right:
-      auto;
+    margin-left: auto;
+    margin-right: auto;
   }
 
   .presentation-actions {
-    justify-content:
-      center;
+    justify-content: center;
   }
 
   .presentation-scroll {
-    display:
-      none;
+    display: none;
   }
 
 }
@@ -816,45 +706,33 @@
   }
 
   .presentation-container {
-    gap:
-      38px;
+    gap: 38px;
   }
 
   .presentation-photo-frame {
-    width:
-      230px;
+    width: 230px;
+    height: 290px;
 
-    height:
-      290px;
-
-    border-radius:
-      16px;
+    border-radius: 16px;
   }
 
   .presentation-photo-border {
-    border-radius:
-      13px;
+    border-radius: 13px;
   }
 
   .presentation-photo {
-    border-radius:
-      13px;
+    border-radius: 13px;
   }
 
   .presentation-photo-glow {
-    width:
-      240px;
+    width: 240px;
+    height: 240px;
 
-    height:
-      240px;
-
-    filter:
-      blur(45px);
+    filter: blur(45px);
   }
 
   .presentation-status {
-    font-size:
-      0.63rem;
+    font-size: 0.63rem;
 
     padding:
       6px 10px;
@@ -868,40 +746,31 @@
         3.5rem
       );
 
-    letter-spacing:
-      -1.5px;
+    letter-spacing: -1.5px;
   }
 
   .presentation-title {
-    font-size:
-      1.2rem;
+    font-size: 1.2rem;
 
-    line-height:
-      1.45;
+    line-height: 1.45;
   }
 
   .presentation-description {
-    font-size:
-      0.95rem;
+    font-size: 0.95rem;
 
-    line-height:
-      1.7;
+    line-height: 1.7;
   }
 
   .presentation-actions {
-    flex-direction:
-      column;
+    flex-direction: column;
 
-    width:
-      100%;
+    width: 100%;
   }
 
   .presentation-button {
-    width:
-      100%;
+    width: 100%;
 
-    max-width:
-      320px;
+    max-width: 320px;
   }
 
 }
@@ -914,42 +783,30 @@
 @media (max-width: 360px) {
 
   .presentation {
-    padding-left:
-      15px;
-
-    padding-right:
-      15px;
+    padding-left: 15px;
+    padding-right: 15px;
   }
 
   .presentation-photo-frame {
-    width:
-      200px;
-
-    height:
-      255px;
+    width: 200px;
+    height: 255px;
   }
 
   .presentation-photo-glow {
-    width:
-      205px;
-
-    height:
-      205px;
+    width: 205px;
+    height: 205px;
   }
 
   .presentation-name {
-    font-size:
-      2.25rem;
+    font-size: 2.25rem;
   }
 
   .presentation-title {
-    font-size:
-      1.08rem;
+    font-size: 1.08rem;
   }
 
   .presentation-description {
-    font-size:
-      0.9rem;
+    font-size: 0.9rem;
   }
 
 }
@@ -965,8 +822,7 @@
     2px solid
     var(--color-blue);
 
-  outline-offset:
-    4px;
+  outline-offset: 4px;
 }
 
 
@@ -978,24 +834,21 @@
 
   .presentation-content,
   .presentation-photo-wrapper {
-    animation:
-      none;
+    animation: none;
   }
 
   .presentation-status-dot,
   .presentation-scroll-arrow {
-    animation:
-      none;
+    animation: none;
   }
 
   .presentation-photo {
-    transition:
-      none;
+    transition: none;
   }
 
   .presentation-button,
   .presentation-scroll {
-    transition:
-      none;
+    transition: none;
   }
+
 }

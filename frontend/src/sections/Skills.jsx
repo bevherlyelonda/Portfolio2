@@ -24,7 +24,11 @@ function Skills() {
 
   if (loading) {
     return (
-      <section id="skills" className="skills skills-state">
+      <section
+        id="skills"
+        className="skills skills-state"
+        aria-label="Chargement des compétences"
+      >
         <p>Chargement des compétences...</p>
       </section>
     );
@@ -32,7 +36,11 @@ function Skills() {
 
   if (error) {
     return (
-      <section id="skills" className="skills skills-state">
+      <section
+        id="skills"
+        className="skills skills-state"
+        aria-label="Erreur de chargement des compétences"
+      >
         <p>Erreur : {error}</p>
       </section>
     );
@@ -155,7 +163,10 @@ function Skills() {
                       className="skill-item"
                     >
 
-                      <span className="skill-dot"></span>
+                      <span
+                        className="skill-dot"
+                        aria-hidden="true"
+                      ></span>
 
                       <span className="skill-name">
                         {skill.name}
