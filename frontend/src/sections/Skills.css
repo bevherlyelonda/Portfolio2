@@ -551,7 +551,7 @@
   }
 
   .skill-category {
-    padding: 18px;
+    padding: 20px;
   }
 
   .skill-category-header {
@@ -571,15 +571,7 @@
   .skill-category-header p {
     font-size: 0.78rem;
   }
-
-}
-
-
-  .skill-category {
-    padding: 20px;
-  }
-
-}
+ }
 
 /* =================================
    ACCESSIBILITÉ
