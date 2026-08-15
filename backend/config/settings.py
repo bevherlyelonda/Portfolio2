@@ -227,6 +227,12 @@ CONTACT_EMAIL = os.getenv("CONTACT_EMAIL")
 
 CORS_ALLOWED_ORIGINS = [
     "http://localhost:5173",
+    "https://portfolio2-zeta-one.vercel.app",
+]
+
+
+CSRF_TRUSTED_ORIGINS = [
+    "https://portfolio2-zeta-one.vercel.app",
 ]
 
 
