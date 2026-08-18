@@ -115,7 +115,7 @@ function Footer() {
           </p>
 
           <p className="footer-location">
-            Passionné par les bases de données,le développement, la Data Science
+            Passionné par les bases de données, le développement, la Data Science
             et l'intelligence artificielle.
           </p>
 
